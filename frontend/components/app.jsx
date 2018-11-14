@@ -5,14 +5,14 @@ import {
   Redirect,
   Switch,
   Link,
-  HashRouter
+  BrowserRouter
 } from 'react-router-dom';
 
 
 const App = () => (
   <div>
     <header>
-      <h1>Yawp!</h1>
+      <h1>Yawp</h1>
     </header>
   </div>
 );
