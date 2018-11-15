@@ -20,14 +20,3 @@ export const logout = () => (
     url: '/api/session'
   })
 );
-
-// me = {
-//   first_name: 'James',
-//   last_name: 'Lo',
-//   password: 'starwars',
-//   email: 'a@gmail.com',
-//   gender: 'male',
-//   phone_number: 'my phone number',
-//   zip_code: '11010',
-//   birthdate: "1900-01-01"
-// }
