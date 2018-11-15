@@ -4,13 +4,13 @@ export const RECEIVE_USER = 'RECEIVE_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
-export const receiveUser = receiveUser => ({
+export const receiveUser = currentUser => ({
   type: RECEIVE_USER,
   currentUser
 });
 
 export const logoutUser = () => ({
-  type: RECEIVE_USER,
+  type: LOGOUT_USER,
 });
 
 export const receiveErrors = errors => ({
@@ -26,13 +26,15 @@ export const signup = user => dispatch => (
   ))
 );
 
-export const login = user => dispatch => (
+export const login = user => dispatch => {
+  console.log("WHY!??!!");
+  return (
   APIUtil.login(user).then(user => (
     dispatch(receiveUser(user))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
-);
+)};
 
 export const logout = () => dispatch => (
   APIUtil.logout().then(user => (
