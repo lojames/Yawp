@@ -1,0 +1,206 @@
+.splash-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:960px;
+  height: 36px;
+  font-family: 'helvetica';
+  line-height: 18px;
+}
+
+.left-splash-header-nav {
+  display: flex;
+  width: 756px;
+  min-width: 756px;
+}
+
+.right-splash-header-nav{
+  width: 186.78px;
+  min-width: 186.78px;
+}
+
+.left-splash-header-elements li{
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 9px;
+  padding-bottom: 8px;
+}
+
+.left-splash-header-elements li:hover{
+  border-bottom: 2px solid white;
+}
+
+.left-splash-header-elements li:active {
+  color: gray;
+}
+
+
+.not-logged-in, .logged-in {
+  display: flex;
+  flex-direction: row;
+}
+
+.not-logged-in-login {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 9px;
+  padding-bottom: 8px;
+  margin-right: 12px;
+}
+
+.not-logged-in-login:hover {
+  border-bottom: 2px solid white;
+}
+
+.not-logged-in-login:active {
+  color: gray;
+}
+
+.not-logged-in-login a {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 9px;
+  padding-bottom: 8px;
+}
+
+.not-logged-in-signup {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 7px;
+  padding-bottom: 8px;
+  border-radius: 4px;
+  border: 2px solid white;
+}
+
+.not-logged-in-signup:hover {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.not-logged-in-signup:active {
+  color: lightgray;
+}
+
+.logged-in-notifications {
+  margin-left:59px;
+  display: inline-block;
+  width: 76.424px;
+  height: 35.972px;
+}
+
+.message-icon, .profile-icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  color: white;
+  fill: currentColor;
+  margin-top: 4px;
+}
+
+.profile-icon {
+  margin-left: 16px;
+}
+
+.user-nav{
+  display: inline-block;
+  width: 58px;
+  height: 38px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+.logged-in-user-avatar-clickable {
+  display: inline-block;
+  height: 38px;
+  width: 38px;
+}
+
+.user-nav-clickable {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  position: relative;
+  top: -13px;
+  right: -3px;
+  text-align: center;
+  white-space: nowrap;
+  margin-bottom: -7;
+  margin-top: -7;
+  color: white;
+  fill: currentColor;
+}
+
+.splash-container-a-subcontainer {
+  margin-left: 107px;
+  margin-right: 107px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.splash-container-a {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  height: 570px;
+  padding-top: 30px;
+  min-width: 1020px;
+  width: 1204px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.splash-container-b {
+  background-color: blue;
+  height: 400px;
+}
+
+.splash-container-c {
+  background-color: yellow;
+  height: 400px;
+}
+
+.splash-container-d {
+  background-color: green;
+  height: 400px;
+}
+
+.splash-all{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.splash-container-inner{
+  padding-top: 80px;
+  width: 960px;
+}
+
+.splash-logo-container{
+  height: 65px;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+button {
+  position: absolute;
+  left: 50%;
+}
+
+.splash-container-a-background {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("im3.jpg");
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.25);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

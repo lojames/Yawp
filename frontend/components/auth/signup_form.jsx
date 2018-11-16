@@ -2,12 +2,15 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-class LoginForm extends React.Component {
+class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      first_name: '',
+      last_name: '',
       email: '',
       password: '',
+      zip_code: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -21,7 +24,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processLogin(user);
+    this.props.processSignup(user);
   }
 
   renderErrors() {
@@ -43,32 +46,54 @@ class LoginForm extends React.Component {
         {this.renderErrors()}
         <span className="auth-main-container">
           <div className="auth-form-main-head">
-            <h3>Log In to Yelp</h3>
-            <span className="sub-text">New to Yelp? <Link to="/signup">Sign up</Link></span>
-            <span>By logging in, you agree to absolutely nothing!</span>
+            <h3>Sign Up for Yelp</h3>
+            <span className="sub-text">Connect with great local businesses</span>
+            <span>By signing up, you agree to absolutely nothing!</span>
           </div>
           <div className="auth-form-container">
             <form onSubmit={this.handleSubmit} className="auth-form-box">
               <div className="login-form">
+                <section className="username-section">
+                  <input type="text"
+                    placeholder="First Name"
+                    value={this.state.first_name}
+                    onChange={this.update('first_name')}
+                    required
+                  />
+                  <input type="text"
+                    placeholder="Last Name"
+                    value={this.state.last_name}
+                    onChange={this.update('last_name')}
+                    required
+                  />
+                </section>
                 <input type="text"
                   placeholder="Email"
                   value={this.state.email}
                   onChange={this.update('email')}
                   className="login-input"
+                  required
                 />
                 <input type="password"
                   placeholder="Password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   className="login-input"
+                  required
                 />
-                <Link to="/">Forgot password?</Link>
-                <input className="auth-submit" type="submit" value="Log In" />
-                <span className="swap-auth">New to Yelp? <Link to="/signup">Sign up</Link></span>
+                <input type="text"
+                  placeholder="Zip Code"
+                  value={this.state.zip_code}
+                  onChange={this.update('zip_code')}
+                  required
+                />
+                {this.renderErrors()}
+                <input className="auth-submit" type="submit" value={this.props.formType} />
+                <span className="swap-auth">Already on Yelp? <Link to="/login">Log in</Link></span>
               </div>
             </form>
           </div>
-          <img src={window.authImage} />
+          <img src='/auth_image.png' />
         </span>
         <span>FOOTER GOES HERE</span>
       </div>
@@ -76,4 +101,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default withRouter(LoginForm);
+export default withRouter(SignupForm);

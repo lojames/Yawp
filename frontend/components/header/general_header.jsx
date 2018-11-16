@@ -1,10 +1,10 @@
 import React from 'react';
 import AuthContainer from '../auth/auth_container'
 
- const Header = () => (
+ const GeneralHeader = () => (
     <header>
       <AuthContainer />
     </header>
 );
 
-export default Header;
+export default GeneralHeader;
