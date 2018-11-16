@@ -42,60 +42,66 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="auth-container">
-        <span className="auth-header"></span>
+        <div className="auth-header">
+          <Link to="/"><img src="/yawp_logo.png" /></Link>
+        </div>
         {this.renderErrors()}
-        <span className="auth-main-container">
-          <div className="auth-form-main-head">
-            <h3>Sign Up for Yelp</h3>
-            <span className="sub-text">Connect with great local businesses</span>
-            <span>By signing up, you agree to absolutely nothing!</span>
-          </div>
-          <div className="auth-form-container">
-            <form onSubmit={this.handleSubmit} className="auth-form-box">
-              <div className="login-form">
-                <section className="username-section">
-                  <input type="text"
-                    placeholder="First Name"
-                    value={this.state.first_name}
-                    onChange={this.update('first_name')}
-                    required
-                  />
-                  <input type="text"
-                    placeholder="Last Name"
-                    value={this.state.last_name}
-                    onChange={this.update('last_name')}
-                    required
-                  />
-                </section>
-                <input type="text"
-                  placeholder="Email"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  className="login-input"
-                  required
-                />
-                <input type="password"
-                  placeholder="Password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                  required
-                />
-                <input type="text"
-                  placeholder="Zip Code"
-                  value={this.state.zip_code}
-                  onChange={this.update('zip_code')}
-                  required
-                />
-                {this.renderErrors()}
-                <input className="auth-submit" type="submit" value={this.props.formType} />
-                <span className="swap-auth">Already on Yelp? <Link to="/login">Log in</Link></span>
+        <div className="auth-main-container">
+          <div className="auth-left">
+            <div className="auth-left-sub">
+              <div className="auth-form-main-head">
+                <h3>Sign Up for Yawp</h3>
+                <span className="auth-form-main-head-sub-text">Connect with great local businesses</span>
+                <span className="auth-form-main-head-sub-sub-text">By signing up, you agree to absolutely nothing!</span>
               </div>
-            </form>
+              <div className="auth-form-container">
+                <form onSubmit={this.handleSubmit} className="auth-form-box">
+                  <div className="login-form">
+                    <section className="username-section">
+                      <input type="text"
+                        placeholder="First Name"
+                        value={this.state.first_name}
+                        onChange={this.update('first_name')}
+                        required
+                      />
+                      <input type="text"
+                        placeholder="Last Name"
+                        value={this.state.last_name}
+                        onChange={this.update('last_name')}
+                        required
+                      />
+                    </section>
+                    <input type="email"
+                      placeholder="Email"
+                      value={this.state.email}
+                      onChange={this.update('email')}
+                      className="login-input"
+                      required
+                    />
+                    <input type="password"
+                      placeholder="Password"
+                      value={this.state.password}
+                      onChange={this.update('password')}
+                      className="login-input"
+                      required
+                    />
+                    <input type="text"
+                      placeholder="Zip Code"
+                      value={this.state.zip_code}
+                      onChange={this.update('zip_code')}
+                      className='login-input'
+                      required
+                    />
+                    {this.renderErrors()}
+                    <input className="auth-submit" type="submit" value="Sign Up" />
+                    <span className="swap-auth">Already on Yawp? <Link to="/login" className="small-link">Log in</Link></span>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
           <img src='/auth_image.png' />
-        </span>
-        <span>FOOTER GOES HERE</span>
+        </div>
       </div>
     );
   }
