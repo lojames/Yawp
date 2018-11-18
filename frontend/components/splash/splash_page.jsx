@@ -31,7 +31,7 @@ const SplashPage = () => {
 
       </div>
 
-      <div className='splash-container-d'>
+      <div className='main-footer-container'>
         <Footer />
       </div>
 

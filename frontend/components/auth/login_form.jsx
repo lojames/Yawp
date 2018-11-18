@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Footer from '../footer/footer'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -82,6 +83,9 @@ class LoginForm extends React.Component {
           </div>
           <img src='/auth_image.png' />
         </span>
+        <div className="main-footer-container">
+          <Footer className="footer-container" />
+        </div>
       </div>
     );
   }
