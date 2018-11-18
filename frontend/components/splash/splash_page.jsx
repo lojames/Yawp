@@ -2,9 +2,8 @@ import React from 'react';
 import SplashHeader from '../header/splash_header';
 import SearchForm from '../search/search_form.jsx';
 import Footer from '../footer/footer.jsx';
-const imageRandom = () => {
+import SplashSearchNavBar from './splash_search_nav_bar'
 
-}
 
 const SplashPage = () => {
   return (
@@ -19,6 +18,7 @@ const SplashPage = () => {
             <div className="search-bar-container">
               <SearchForm className='search-bar'/>
             </div>
+            <SplashSearchNavBar />
           </div>
         </div>
       </div>
