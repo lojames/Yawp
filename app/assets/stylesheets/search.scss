@@ -11,7 +11,10 @@
 
 .search-find-bar, .search-near-bar {
   display: inline-block;
-  padding: 1.1%;
+  padding-left: 1.1%;
+  padding-right: 1.1%;
+  padding-top: 1.2%;
+  padding-bottom: 1.2%;
 }
 
 .search-near-bar {
@@ -37,7 +40,7 @@
   display:inline-block;
   color: #666;
   font-size: 18px;
-  margin-right: 2.5%;
+  margin-right: 2.8%;
   line-height: 23.33px;
 }
 
@@ -74,8 +77,8 @@
 
 .search-icon{
   position: absolute;
-  height:60%;
-  width: 60%;
+  height:52%;
+  width: 52%;
   color: white;
   fill: currentColor;
 }
