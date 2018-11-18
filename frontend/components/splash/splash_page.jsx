@@ -1,7 +1,7 @@
 import React from 'react';
 import SplashHeader from '../header/splash_header';
 import SearchForm from '../search/search_form.jsx';
-
+import Footer from '../footer/footer.jsx';
 const imageRandom = () => {
 
 }
@@ -32,7 +32,7 @@ const SplashPage = () => {
       </div>
 
       <div className='splash-container-d'>
-        FOOTER GOES HERE
+        <Footer />
       </div>
 
     </>

@@ -154,7 +154,6 @@
   color: white;
   font-weight: 700;
   font-size: 14px;
-  height: 570px;
   margin-left: 107px;
   margin-right: 107px;
   padding-left: 15px;
@@ -173,8 +172,8 @@
 }
 
 .splash-container-d {
-  background-color: green;
-  height: 400px;
+  border-top: 1px solid #ccc;
+  background-color: rgb(245,245,245);
 }
 
 .splash-container-inner{
