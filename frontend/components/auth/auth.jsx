@@ -5,7 +5,7 @@ const Auth = ({ currentUser, logout }) => {
   const authNav = () => (
     <ul className="not-logged-in">
       <li className='not-logged-in-login'><Link to="/login">Log In</Link></li>
-      <li className='not-logged-in-signup'><Link to="/signup">Sign Up</Link></li>
+      <li className='not-logged-in-signup'><Link to="/signup" className="signup-link">Sign Up</Link></li>
     </ul>
   );
 
@@ -33,9 +33,9 @@ const Auth = ({ currentUser, logout }) => {
     </div>
 
     <div className="user-nav">
-      <div className="logged-in-user-avatar-clickable">
+      <span className="logged-in-user-avatar-clickable">
         <img src='./avatar.png' />
-      </div>
+      </span>
       <span className='user-nav-clickable'>
         <svg id="14x14_triangle_down" height="100%" viewBox="0 0 14 14"
           width="100%">
@@ -43,7 +43,7 @@ const Auth = ({ currentUser, logout }) => {
         </svg>
       </span>
     </div>
-    <button onClick={logout}>Log Out</button>
+    <button className="temp-button" onClick={logout}>Log Out</button>
   </>
   );
 
