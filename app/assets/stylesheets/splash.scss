@@ -149,7 +149,7 @@
   fill: currentColor;
 }
 
-.splash-container-a {
+.splash-container-main {
   color: white;
   font-weight: 700;
   font-size: 14px;
@@ -161,7 +161,7 @@
 }
 
 
-.splash-container-c {
+.splash-business-categories-container {
   margin: auto;
   min-width: 1020px;
 }
@@ -195,8 +195,8 @@ img {
   left: 50%;
 }
 
-.splash-container-a-background {
-  background: image-url("im3.jpg");
+.splash-container-main-background {
+  // background: image-url("hanami-sushi_by_Kevin-P");
   padding-top: 30px;
   display: block;
   width: 100%;
@@ -211,4 +211,25 @@ img {
 .search-bar-container {
   height: 63px;
   display: block;
+}
+
+.splash-background-business{
+  font-family: helvetica;
+  text-align: center;
+  display: block;
+  margin: auto;
+  line-height: 18px;
+}
+.splash-background-photographer{
+  font-family: helvetica;
+  font-weight: 400;
+  text-align: center;
+  display: block;
+  line-height: 18px;
+  margin: auto;
+  padding-bottom: 47px;
+}
+
+strong {
+  font-weight: 700;
 }
