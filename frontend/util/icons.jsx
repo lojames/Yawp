@@ -34,7 +34,6 @@ export const nightlifeIcon = (iconSize, iconColor) => {
   );
 }
 
-
 export const homeservicesIcon = (iconSize, iconColor) => {
   iconSize = iconSize.toString();
   const iconStyle = {color: iconColor, fill:"currentColor"};
@@ -55,7 +54,6 @@ export const homeservicesIcon = (iconSize, iconColor) => {
   );
 }
 
-
 export const deliveryIcon = (iconSize, iconColor) => {
   iconSize = iconSize.toString();
   const iconStyle = {color: iconColor, fill:"currentColor"};
@@ -71,6 +69,20 @@ export const deliveryIcon = (iconSize, iconColor) => {
           1.25 1.25 0 0 1 0 2.5z">
         </path>
       </g>
+      </svg>
+    </span>
+  );
+}
+
+export const triangledownIcon = (iconSize, iconColor) => {
+  iconSize = iconSize.toString();
+  const iconStyle = {color: iconColor, fill:"currentColor"};
+  return (
+    <span className="triangle-icon">
+      <svg height={iconSize} viewBox="0 0 14 14"
+        width={iconSize} style={iconStyle}>
+        <path d="M7 9L3.5 5h7L7 9z">
+        </path>
       </svg>
     </span>
   );

@@ -160,14 +160,10 @@
   min-width: 960px;
 }
 
-.splash-container-b {
-  background-color: blue;
-  height: 400px;
-}
 
 .splash-container-c {
-  background-color: yellow;
-  height: 400px;
+  margin: auto;
+  min-width: 1020px;
 }
 
 .main-footer-container {
@@ -184,8 +180,9 @@
 }
 
 .splash-logo-container{
-  height: 65px;
+  height: 80px;
   text-align: center;
+  margin-bottom: 48px;
 }
 
 img {
@@ -212,6 +209,6 @@ img {
 }
 
 .search-bar-container {
-  margin-top: 63px;
+  height: 63px;
   display: block;
 }

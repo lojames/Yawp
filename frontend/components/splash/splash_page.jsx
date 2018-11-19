@@ -23,10 +23,6 @@ const SplashPage = () => {
         </div>
       </div>
 
-      <div className='splash-container-b'>
-
-      </div>
-
       <div className='splash-container-c'>
 
       </div>

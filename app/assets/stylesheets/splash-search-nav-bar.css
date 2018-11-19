@@ -1,0 +1,82 @@
+.splash-search-nav-bar{
+  padding-bottom: 165px;
+  text-align: center;
+  font-family: helvetica;
+  font-size: 14px;
+  line-height: 18px
+}
+
+.splash-search-nav-bar ul{
+
+}
+
+.splash-search-nav-bar  li{
+  padding: 0 12px 0 12px;
+  display: inline-block;
+  line-height: 18px;
+}
+
+.homeservices-dropdown {
+  display: inline-block;
+}
+
+.splash-search-nav-bar a, .homeservices-dropdown{
+  display: inline-block;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: top;
+}
+
+.splash-search-nav-bar a:hover, .homeservices-dropdown:hover{
+  border-bottom: 1px solid white;
+}
+
+.homeservices-dropdown:hover{
+  cursor: default;
+}
+
+.triangle-icon{
+  vertical-align: top;
+}
+
+.homservices-icon{
+  position: relative;
+}
+
+.homeservices-dropdown-border-container{
+  padding-top: 10px;
+}
+
+.homeservices-dropdown-container {
+  display: none;
+  position: absolute;
+  padding: 7px 0 7px 0;
+  background-color: white;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+.splash-search-nav-homeservices:hover .homeservices-dropdown-container {
+  display: block;
+}
+
+
+.homeservices-dropdown-links li {
+  padding: 0;
+  color: rgb(0,115,187);
+  font-weight: 400;
+  display: block;
+  text-align: left;
+}
+.homeservices-dropdown-links a {
+  padding: 3.5px 14px 3.5px 14px;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.homeservices-dropdown-links a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration-color: rgb(0,115,187);
+}
