@@ -1,0 +1,120 @@
+.splash-business-categories{
+  margin: 0 15px 0 15px;
+  padding: 36px 15px 0px 15px;
+  min-width: 990px;
+}
+
+.splash-business-categories h1{
+  color: rgb(211, 35, 35);
+  font-size: 21px;
+  font-family: helvetica;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.splash-business-categories-row1, .splash-business-categories-row2{
+  display: block;
+  margin-bottom: 30px;
+  min-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.splash-business-categories-row2{
+  margin-bottom: 45px;
+}
+
+.splash-business-categories img{
+  width: 72px;
+  height: 72px;
+  margin-bottom: 6px;
+}
+
+.splash-business-categories h2{
+  font-size: 14px;
+  font-family: helvetica;
+  font-weight: 700;
+  line-height: 18px;
+  margin-bottom: 6px;
+}
+
+.splash-business-icon-outer {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  padding: 17px 11px 17px 11px;
+  margin: 0 15px 0 15px;
+}
+
+.splash-business-icon-outer:hover {
+  border-color: rgb(0, 115, 187);
+  box-shadow: 0 6px 12px rgba(0,0,0,.1);
+  cursor: pointer;
+}
+
+.splash-business-icon-outer > a > div {
+  display: inline-block;
+  width: 193.5px;
+  height: 101.333px;
+}
+
+.splash-business-icon-outer a {
+  display: block;
+}
+
+.splash-business-icon-outer:active {
+  box-shadow: none;
+}
+
+.splash-business-categories-more{
+  transition: height .25s ease-out;
+}
+
+
+.splash-business-categories-more > div {
+  width: 960px;
+  min-width: 960px;
+  padding: 30px 0 46px 0;
+  border-top: 1px solid lightgray;
+  margin: auto;
+}
+
+.splash-business-categories-more-row{
+  line-height: 18px;
+  color: rgb(0, 115, 187);
+  font-size: 14px;
+  font-family: helvetica;
+  display: block;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 18px;
+  border: none;
+}
+
+.splash-business-categories-more-row > div{
+  display: inline-block;
+  text-align: left;
+  width: 217.5px;
+  margin: 0 15px 0 15px;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+.splash-business-categories-more-row > div:first-child{
+  margin-left: 0;
+}
+
+.splash-business-categories-more-row > div:last-child{
+  margin-right: 0;
+}
+
+.splash-business-categories-more-row span{
+  margin-right: 6px;
+}
+
+.splash-business-categories-more-row strong{
+  margin-right: 6px;
+  vertical-align: top;
+  position: relative;
+  top: 2px;
+}

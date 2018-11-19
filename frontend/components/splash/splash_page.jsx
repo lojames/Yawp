@@ -3,6 +3,7 @@ import SplashHeader from '../header/splash_header';
 import SearchForm from '../search/search_form.jsx';
 import Footer from '../footer/footer.jsx';
 import SplashSearchNavBar from './splash_search_nav_bar'
+import SplashCategories from './splash_categories'
 
 
 const randomImage = () => {
@@ -43,6 +44,7 @@ const SplashPage = () => {
       </div>
 
       <div className='splash-business-categories-container'>
+        <SplashCategories />
       </div>
 
       <div className='main-footer-container'>
