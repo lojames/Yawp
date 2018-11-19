@@ -4,6 +4,12 @@
   padding-top: 12px;
   padding-bottom: 12px;
   min-width: 1050px;
+  text-align: center;
+}
+
+.auth-header a{
+  display: inline-block;
+  height: 100%;
 }
 
 .auth-header img {
