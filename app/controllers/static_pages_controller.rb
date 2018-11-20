@@ -9,7 +9,6 @@ class StaticPagesController < ApplicationController
     url = "http://api.ipstack.com/#{ip}?access_key=#{access_key}"
     uri = URI(url)
     response = Net::HTTP.get(uri)
-    puts (response)
     response.html_safe
   end
 
