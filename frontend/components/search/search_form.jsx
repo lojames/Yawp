@@ -13,6 +13,7 @@ const search_svg = () => {
 }
 
 const SearchForm = () => {
+  const userLocation = (window.userData.city) ? `${window.userData.city}, ${window.userData.region_name}` : "";
   return (
     <form className="search-bar">
       <div className="search-find-bar">
@@ -30,7 +31,8 @@ const SearchForm = () => {
           <span className="field-name">Near</span>
           <input
             type="text"
-            placeholder="Current Location"
+            placeholder="address, neighborhood, city, state or zip"
+            defaultValue={userLocation}
           />
         </label>
       </div>
