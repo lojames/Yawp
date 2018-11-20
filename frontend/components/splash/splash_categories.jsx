@@ -18,72 +18,73 @@ const SplashCategories = () => {
     <div className='splash-business-categories'>
       <h1>Browse Businesses by Category</h1>
       <div className='splash-business-categories-row1'>
-        <div className='splash-business-icon-outer'>
-          <a href="/">
+        <a href="/" className='splash-business-icon-outer'>
+          <div>
             <div>
               <img src='icon_restaurants.png'/>
               <h2>Restaurants</h2>
             </div>
-          </a>
-        </div>
-        <div className='splash-business-icon-outer'>
-          <a href="/">
+          </div>
+        </a>
+        <a href="/" className='splash-business-icon-outer'>
+          <div>
             <div>
               <img src='icon_shopping.png'/>
               <h2>Shopping</h2>
             </div>
-          </a>
-        </div>
-        <div className='splash-business-icon-outer'>
-          <a href="/">
+          </div>
+        </a>
+        <a href="/" className='splash-business-icon-outer'>
+          <div>
             <div>
               <img src='icon_nightlife.png'/>
               <h2>Nightlife</h2>
             </div>
-          </a>
-        </div>
-        <div className='splash-business-icon-outer'>
-          <a href="/">
+          </div>
+        </a>
+
+        <a href="/" className='splash-business-icon-outer'>
+          <div>
             <div>
               <img src='icon_active.png'/>
               <h2>Active Life</h2>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
       <div className='splash-business-categories-row2'>
-        <div className='splash-business-icon-outer'>
-          <a href="/">
+        <a href="/" className='splash-business-icon-outer'>
+          <div>
             <div>
               <img src='icon_beauty.png'/>
               <h2>Beauty &amp; Spas</h2>
             </div>
-          </a>
-        </div>
-        <div className='splash-business-icon-outer'>
-          <a href="/">
+          </div>
+        </a>
+        <a href="/" className='splash-business-icon-outer'>
+          <div>
             <div>
               <img src='icon_automotive.png'/>
               <h2>Automotive</h2>
             </div>
-          </a>
-        </div>
-        <div className='splash-business-icon-outer'>
-          <a href="/">
+          </div>
+        </a>
+        <a href="/" className='splash-business-icon-outer'>
+          <div>
             <div>
               <img src='icon_homeservices.png'/>
               <h2>Home Services</h2>
             </div>
-          </a>
-        </div>
-        <div className='splash-business-icon-outer'>
-          <a onClick={showHideDiv}>
+          </div>
+        </a>
+        <a onClick={showHideDiv} className='splash-business-icon-outer'>
+          <div>
             <div>
               <img src='icon_more.png'/>
               <h2 id="render-text">More Categories</h2>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
       <div className='splash-business-categories-more' id='render-div' style={{display:"block", height: "0", overflow: "hidden"}}>
         <div>

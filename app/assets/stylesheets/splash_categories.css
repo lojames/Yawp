@@ -52,13 +52,13 @@
   cursor: pointer;
 }
 
-.splash-business-icon-outer > a > div {
+.splash-business-icon-outer > div > div {
   display: inline-block;
   width: 193.5px;
   height: 101.333px;
 }
 
-.splash-business-icon-outer a {
+.splash-business-icon-outer > div {
   display: block;
 }
 
@@ -112,9 +112,18 @@
   margin-right: 6px;
 }
 
+.splash-business-categories-more-row span:hover{
+  cursor: default;
+}
+
 .splash-business-categories-more-row strong{
   margin-right: 6px;
   vertical-align: top;
   position: relative;
   top: 2px;
+}
+
+.splash-business-categories-more-row strong:hover {
+  text-decoration: underline;
+  text-decoration-color: rgb(0, 115, 187);
 }
