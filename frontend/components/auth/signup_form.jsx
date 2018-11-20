@@ -47,7 +47,7 @@ class SignupForm extends React.Component {
       return "";
     else {
       return(
-        <div className='error-alert-box' onClick={this.hideErrors} id='error-alert-box-id' style={{display:"flex"}}>
+        <div className='error-alert-box' id='error-alert-box-id' style={{display:"flex"}}>
           <ul className='login-signup-errors'>
             {this.props.errors.map((error, i) => (
               <li key={`error-${i}`}>
@@ -55,7 +55,7 @@ class SignupForm extends React.Component {
               </li>
             ))}
           </ul>
-          <span>×</span>
+          <span onClick={this.hideErrors}>×</span>
         </div>
       );
     }
