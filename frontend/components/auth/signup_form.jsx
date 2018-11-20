@@ -30,18 +30,35 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processSignup(user);
+    if (this.props.errors.length > 0){
+      const errors = document.getElementById("error-alert-box-id");
+      errors.style.display = "flex";
+    }
   }
 
+  hideErrors() {
+    const errors = document.getElementById("error-alert-box-id");
+    errors.style.display = "none";
+  };
+
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={i}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    const errors = document.getElementById("error-alert-box-id");
+    if (this.props.errors.length === 0)
+      return "";
+    else {
+      return(
+        <div className='error-alert-box' onClick={this.hideErrors} id='error-alert-box-id' style={{display:"flex"}}>
+          <ul className='login-signup-errors'>
+            {this.props.errors.map((error, i) => (
+              <li key={`error-${i}`}>
+                {error}
+              </li>
+            ))}
+          </ul>
+          <span>×</span>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -97,9 +114,11 @@ class SignupForm extends React.Component {
                       className='login-input'
                       required
                     />
-                    {this.renderErrors()}
                     <input className="auth-submit" type="submit" value="Sign Up" />
-                    <span className="swap-auth">Already on Yawp? <Link to="/login" className="small-link">Log in</Link></span>
+                      <div className='demo-user-swap-auth'>
+                        <div className='demo-user' onClick={this.props.demoLogin}>Demo User</div>
+                        <div className="swap-auth">Already on Yawp? <Link to="/login" className="small-link">Log in</Link></div>
+                      </div>
                   </div>
                 </form>
               </div>

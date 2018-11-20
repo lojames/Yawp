@@ -11,9 +11,13 @@ const msp = ({ errors }) => {
 };
 
 const mdp = dispatch => {
+  const demoUser = {
+    email: 'a@gmail.com', password: 'starwars'
+  }
   return {
     processLogin: (user) => dispatch(login(user)),
     removeErrors: () => dispatch(removeErrors()),
+    demoLogin: () => dispatch(login(demoUser)),
   };
 };
 
