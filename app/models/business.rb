@@ -4,6 +4,12 @@ require 'net/http'
 class Business < ApplicationRecord
   validates :name, :street_address, :city, :state, :zip, :latitude, :longitude, presence: true
 
+  has_many :business_hours
+  has_many :reviews
+  has_many :images
+  has_many :business_categories
+  has_many :categories, through: :business_categories
+
   def self.geocode(street_address, city, state, zip)
     access_key = Rails.application.credentials.texas_am_geoservices[:api_key]
     url = "https://geoservices.tamu.edu/Services/Geocode/WebService/GeocoderWebServiceHttpNonParsed_V04_01.aspx?version=4.01"

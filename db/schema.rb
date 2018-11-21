@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_220032) do
+ActiveRecord::Schema.define(version: 2018_11_21_214903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "business_categories", force: :cascade do |t|
-    t.integer "business_id", null: false
-    t.integer "category_id", null: false
+    t.integer "business_id"
+    t.integer "category_id"
     t.index ["business_id", "category_id"], name: "index_business_categories_on_business_id_and_category_id", unique: true
     t.index ["business_id"], name: "index_business_categories_on_business_id"
     t.index ["category_id"], name: "index_business_categories_on_category_id"
@@ -61,11 +61,14 @@ ActiveRecord::Schema.define(version: 2018_11_20_220032) do
   create_table "images", force: :cascade do |t|
     t.string "image_url", null: false
     t.string "comment"
-    t.string "imageable_type", null: false
-    t.string "imageable_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
+    t.integer "user_id", null: false
+    t.integer "business_id", null: false
+    t.integer "review_id"
+    t.index ["business_id"], name: "index_images_on_business_id"
+    t.index ["review_id"], name: "index_images_on_review_id"
+    t.index ["user_id"], name: "index_images_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -74,6 +77,8 @@ ActiveRecord::Schema.define(version: 2018_11_20_220032) do
     t.integer "business_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "score", null: false
+    t.string "date"
     t.index ["business_id", "user_id"], name: "index_reviews_on_business_id_and_user_id", unique: true
     t.index ["business_id"], name: "index_reviews_on_business_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"

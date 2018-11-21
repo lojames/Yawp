@@ -13,7 +13,8 @@ const search_svg = () => {
 }
 
 const SearchForm = () => {
-  const userLocation = (window.userData.city) ? `${window.userData.city}, ${window.userData.region_name}` : "";
+  // const userLocation = (window.userData.city) ? `${window.userData.city}, ${window.userData.region_name}` : "";
+  const userLocation = ""
   return (
     <form className="search-bar">
       <div className="search-find-bar">

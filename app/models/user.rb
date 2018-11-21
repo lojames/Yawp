@@ -5,6 +5,9 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
   validates :zip_code, format: { with: /\A\d{5,}\Z/ }
 
+  has_many :reviews
+  has_many :images
+
   after_initialize :ensure_session_token
   attr_reader :password
 
