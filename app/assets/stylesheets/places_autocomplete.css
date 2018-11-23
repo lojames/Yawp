@@ -84,7 +84,7 @@
 
 /* The style of the svg icon, when the .ap-suggestion is on hover */
 .ap-cursor .ap-suggestion-icon svg {
-  rgb(0, 115, 187)
+  rgb(0, 115, 187);
 }
 
 /* The styles of the Algolia Places input footer */
