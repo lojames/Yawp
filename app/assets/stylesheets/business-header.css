@@ -1,0 +1,54 @@
+.main-business-wrap {
+  min-width: 1020px;
+  background-color: rgb(245, 245, 245);
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.main-business-container {
+  margin: 0 auto;
+  padding: 15px 15px 24px 15px;
+  width: 960px;
+}
+
+.main-business-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 13px;
+  font-size: 16px;
+}
+
+.main-business-header h1{
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42px;
+  padding-top: 6px;
+}
+
+main {
+  font-family: helvetica;
+}
+
+.main-business-info {
+  height: 100%;
+  display: inline-block;
+}
+
+.review-count {
+  color: rgb(102, 102, 102);
+}
+
+.main-business-header-links {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main-business-header-links > ul {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}

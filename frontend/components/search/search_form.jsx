@@ -1,4 +1,5 @@
 import React from 'react';
+import AlgoliaPlaces from 'algolia-places-react';
 
 const search_svg = () => {
   return (
@@ -13,14 +14,19 @@ const search_svg = () => {
 }
 
 const SearchForm = () => {
-  // const userLocation = (window.userData.city) ? `${window.userData.city}, ${window.userData.region_name}` : "";
-  const userLocation = ""
+  const userLocation = (window.userData.city) ? `${window.userData.city}, ${window.userData.region_name}` : "";
+  const highlightText = () => {
+    const inputField = document.getElementById('search-bar-input-id')
+    inputField.setSelectionRange(0, inputField.value.length);
+  }
+  
   return (
     <form className="search-bar">
       <div className="search-find-bar">
         <label className="search-find-label">
           <span className="field-name">Find</span>
           <input
+            className="search-bar-input"
             type="text"
             placeholder="burgers, barbers, spas, handymen..."
           />
@@ -30,10 +36,21 @@ const SearchForm = () => {
       <div className="search-near-bar">
         <label className="search-near-label">
           <span className="field-name">Near</span>
-          <input
-            type="text"
-            placeholder="address, neighborhood, city, state or zip"
+            <AlgoliaPlaces
+            placeholder='address, neighborhood, city, state or zip'
             defaultValue={userLocation}
+            onFocus = { highlightText }
+            id='search-bar-input-id'
+            options={{
+              appId: window.algAppId,
+              apiKey: window.algApiKey,
+              language: 'en',
+              countries: ['us'],
+              type: '',
+            }}
+            onChange={({ query, rawAnswer, suggestion, suggestionIndex }) =>
+              console.log(suggestion.latlng)
+            }
           />
         </label>
       </div>

@@ -37,12 +37,12 @@
 }
 
 
-.not-logged-in, .logged-in {
+.not-logged-in, .splash-container-main .logged-in {
   display: flex;
   flex-direction: row;
 }
 
-.not-logged-in-login {
+.splash-container-main .not-logged-in-login {
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 9px;
@@ -50,28 +50,28 @@
   margin-right: 12px;
 }
 
-.signup-link {
+.splash-container-main .signup-link {
   width: 100%;
   padding: 7px 24px 8px 24px;
 }
 
-.not-logged-in-login:hover {
+.splash-container-main .not-logged-in-login:hover {
   border-bottom: 2px solid white;
   cursor: pointer;
 }
 
-.not-logged-in-login:active {
+.splash-container-main .not-logged-in-login:active {
   color: gray;
 }
 
-.not-logged-in-login a {
+.splash-container-main .not-logged-in-login a {
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 9px;
   padding-bottom: 8px;
 }
 
-.not-logged-in-signup {
+.splash-container-main .not-logged-in-signup {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,17 +79,17 @@
   border: 2px solid white;
 }
 
-.not-logged-in-signup:hover {
+.splash-container-main .not-logged-in-signup:hover {
   background-color: white;
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 
-.not-logged-in-signup:active {
+.splash-container-main .not-logged-in-signup:active {
   color: lightgray;
 }
 
-.logged-in-notifications {
+.splash-container-main .logged-in-notifications {
   margin-left:47px;
   display: inline-block;
   width: 76.424px;

@@ -5,8 +5,7 @@
   margin: auto;
   background: white;
   color: black;
-  border-radius: 4px;
-  overflow: hidden;
+  border-radius: 5px;
 }
 
 .search-find-bar, .search-near-bar {
@@ -19,7 +18,7 @@
 
 .search-near-bar {
   width: 41.2%;
-  border-left: 1px solid;
+  border-left: 1.5px solid;
   border-image: linear-gradient(white 20%, lightgray 20%, lightgray 80%, white 80%) 1;
 }
 
@@ -44,7 +43,7 @@
   line-height: 23.33px;
 }
 
-.search-bar input {
+.search-bar-input {
   display:inline-block;
   width: auto;
   flex-grow: 1;
@@ -54,7 +53,7 @@
 }
 
 
-.search-bar button {
+.search-submit {
   position: relative;
   display: flex;
   align-items: center;
@@ -64,6 +63,7 @@
   background-color: rgb(211, 35, 35);
   border: none;
   outline: none;
+  border-radius: 0 4px 4px 0;
 }
 
 .search-bar button:hover {

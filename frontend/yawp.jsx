@@ -4,6 +4,8 @@ import Root from './components/root';
 import * as session from './actions/session_actions'
 import configureStore from './store/store';
 
+import { fetchBusinesses } from './actions/business_actions'
+
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store = configureStore();
@@ -20,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.fetchBusinesses = fetchBusinesses;
   ReactDOM.render(<Root store={store} />, root);
 
 });

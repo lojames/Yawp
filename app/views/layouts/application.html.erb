@@ -6,6 +6,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <script type="text/javascript">
+      window.userData = <%= (get_location) %>
+      window.algApiKey = "<%= Rails.application.credentials.algolia[:api_key] %>"
+      window.algAppId = "<%= Rails.application.credentials.algolia[:app_id] %>"
+    </script>
   </head>
 
   <body>

@@ -1,0 +1,118 @@
+/* Main input wrapper */
+.algolia-places {
+  position: static !important;
+}
+
+/* The algolia-places input */
+.ap-input, .ap-hint {
+  padding-right: 0;
+  padding-left: 0;
+  height: auto;
+  border: none;
+  position: fixed;
+}
+
+.general-header .ap-input{
+  font-size: 14px;
+}
+
+.splash-container-main .ap-input{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* The style of the svg icons when the input is on hover */
+.ap-input:hover ~ .ap-input-icon svg,
+.ap-input:focus ~ .ap-input-icon svg,
+.ap-input-icon:hover svg {}
+
+/* The dropdown style */
+.ap-dropdown-menu {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+  border-top: 1px solid lightgray;
+}
+
+/* The suggestions style */
+.ap-suggestion {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 0 0 0;
+}
+
+/* The highlighted names style */
+.ap-suggestion em {
+  font-size: 14px;
+}
+
+/* The addresses style */
+.ap-address {
+  font-size: 12px;
+}
+
+.ap-adress:hover {
+  color: white;
+}
+
+/* The icons of each suggestions ( can be a building or a pin ) */
+.ap-suggestion-icon {
+  display: none;
+}
+
+/* The style of the svg inside the .ap-suggestion-icon */
+.ap-suggestion-icon svg {
+  display:none;
+}
+
+/* The icons inside the input ( can be a pin or a cross ) */
+.ap-input-icon {
+  display: none;
+  background-color: white;
+}
+
+/* The style of the svg inside the .ap-input-icon */
+.ap-input-icon svg {
+  display:none;
+}
+
+/* .a-cursor is the class a suggestion go on hover */
+.ap-cursor {
+  background: rgb(0, 115, 187);
+  color: white;
+}
+
+/* The style of the svg icon, when the .ap-suggestion is on hover */
+.ap-cursor .ap-suggestion-icon svg {
+  rgb(0, 115, 187)
+}
+
+/* The styles of the Algolia Places input footer */
+.ap-footer {
+  display: none;
+}
+
+/* The styles of the Algolia Places input footer links */
+.ap-footer a {
+  display: none;
+}
+
+/* The styles of the Algolia Places input footer svg icons */
+.ap-footer a svg {
+  display: none;
+}
+
+/* The styles of the Algolia Places input footer on hover */
+.ap-footer:hover {
+  display: none;
+}
+
+.search-near-label > div {
+  display: inline-block;
+  width: auto;
+  flex-grow: 1;
+}
+
+.search-near-bar {
+  position: relative;
+}
