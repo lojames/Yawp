@@ -8,6 +8,12 @@ class Business extends React.Component{
     this.props.fetchBusiness(this.props.match.params.id);
   }
 
+  componentDidUpdate(prevProps){
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.props.fetchBusiness(this.props.match.params.id);
+    }
+  }
+
 
   render(){
     return (
