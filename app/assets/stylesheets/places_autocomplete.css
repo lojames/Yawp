@@ -62,7 +62,7 @@
 
 /* The style of the svg inside the .ap-suggestion-icon */
 .ap-suggestion-icon svg {
-  display:none;
+  display: none;
 }
 
 /* The icons inside the input ( can be a pin or a cross ) */
@@ -83,9 +83,7 @@
 }
 
 /* The style of the svg icon, when the .ap-suggestion is on hover */
-.ap-cursor .ap-suggestion-icon svg {
-  rgb(0, 115, 187);
-}
+.ap-cursor .ap-suggestion-icon svg {}
 
 /* The styles of the Algolia Places input footer */
 .ap-footer {

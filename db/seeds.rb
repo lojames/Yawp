@@ -1325,12 +1325,12 @@ Watches (watches)
 Wholesale Stores (wholesale_stores)
 Wigs"
 
-# categories = categories.split(/ \(.+?\)\s/).uniq
-#
-# Category.destroy_all
-# categories.each do |category|
-#   Category.create!(name: category)
-# end
+categories = categories.split(/ \(.+?\)\s/).uniq
+
+Category.destroy_all
+categories.each do |category|
+  Category.create!(name: category)
+end
 
 u1 = User.create(email: "a@gmail.com", first_name: "Anthony", last_name: "Hopkins", password: "starwars", zip_code: "12340")
 u2 = User.create(email: "b@gmail.com", first_name: "John", last_name: "Doe", password: "starwars", zip_code: "12340")
