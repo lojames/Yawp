@@ -6,7 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
+    <link rel="shortcut icon" href="yelp_burst.png">
+    <title>Yawp!</title>
     <script type="text/javascript">
       window.userData = <%= (get_location) %>
       window.algApiKey = "<%= Rails.application.credentials.algolia[:api_key] %>"
