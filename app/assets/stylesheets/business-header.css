@@ -6,7 +6,7 @@
 
 .main-business-container {
   margin: 0 auto;
-  padding: 15px 15px 24px 15px;
+  padding: 15px 15px 0 15px;
   width: 960px;
 }
 
@@ -24,6 +24,7 @@
   font-weight: 700;
   line-height: 42px;
   padding-top: 6px;
+  color: rgb(51,51,51);
 }
 
 main {
@@ -51,4 +52,95 @@ main {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.main-business-stars {
+  display: inline-block;
+  margin-right: 6px;
+  height: 24px;
+  width: 132px;
+}
+
+.rating-wrapper {
+  margin: 9px 0;
+  display: flex;
+  align-items:center;
+}
+
+.review-count {
+  display: inline-block;
+}
+
+.main-business-header-links li:hover{
+  background-color: white;
+  background-image: none;
+}
+
+.add-photo-icon, .share-icon, .save-icon{
+  height: 18px;
+}
+
+.main-business-header li{
+  height: 18px;
+  font-size: 12px;
+  color: #666;
+  font-weight: 700;
+  padding: 5px 8px;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(247, 247, 247));
+}
+
+.main-business-header ul{
+  border-radius: 3px;
+  border: 1px solid rgb(204, 204, 204);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.main-business-header ul *:not(:first-child):not(:last-child) {
+  border-left: 1px solid rgb(204, 204, 204);
+  border-right: 1px solid rgb(204, 204, 204);
+}
+
+.add-photo-icon-text, .share-icon-text{
+  position: relative;
+  top: -4px;
+  margin-left: 2px;
+}
+
+.save-icon-text {
+  position: relative;
+  top: 1px;
+}
+
+.main-business-review-link{
+  margin-right: 12px;
+  padding: 8px 19px 9px 12px;
+  background-image: linear-gradient(rgb(217, 0, 7), rgb(201, 20, 0));
+  border-radius: 3px;
+  border: 1px solid rgb(141, 0, 5);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  height: 18px;
+}
+
+.main-business-header-save{
+  display: flex;
+  align-items: center;
+}
+
+.main-business-review-link:hover{
+  background-color: #ed0008;
+  background-image: none;
+}
+
+.main-business-review-link .star-icon{
+  position: relative;
+  top: -2px;
+}
+
+.review-text{
+  margin-left: 2px;
+  position:relative;
+  top:-8px;
 }

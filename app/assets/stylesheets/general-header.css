@@ -7,7 +7,7 @@
 .general-header-container {
   width: 960px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 1px 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -130,6 +130,7 @@
 .general-header-container .not-logged-in a{
   padding: 12px 12px;
   line-height: 11px;
+  border: solid 1px #c41314;
 }
 
 .general-header-container .not-logged-in-login a{
@@ -142,10 +143,6 @@
 .general-header-container .not-logged-in-login a:hover {
   background-color: rgb(196, 19, 20);
   cursor: pointer;
-}
-
-.general-header-container .not-logged-in-login a{
-  border: none;
 }
 
 .general-header-container .not-logged-in-login:active {

@@ -1,5 +1,65 @@
 import React from 'react';
 
+export const starIcon = (iconSize, iconColor) => {
+  iconSize = iconSize.toString();
+  const iconStyle = {color: iconColor, fill:"currentColor"};
+  return (
+    <span className="star-icon">
+      <svg height={iconSize} width={iconSize} viewBox={"0 0 24 24"}
+        style={iconStyle}>
+        <path d="M12 1.5l2.61 6.727 6.89.53-5.278 4.688 1.65 7.055L12 16.67
+          6.13 20.5l1.648-7.055L2.5 8.757l6.89-.53L12 1.5z">
+        </path>
+      </svg>
+    </span>
+  );
+}
+
+export const addPhotoIcon = (iconSize, iconColor) => {
+  iconSize = iconSize.toString();
+  const iconStyle = {color: iconColor, fill:"currentColor"};
+  return (
+    <span className="add-photo-icon">
+      <svg height={iconSize} width={iconSize} viewBox={"0 0 18 18"}
+        style={iconStyle}>
+        <path d="M15 15H3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2-2h4a2 2
+          0 0 1 2 2h2a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2zM9 4.75a4.25 4.25 0 1 0 0
+          8.5 4.25 4.25 0 0 0 0-8.5zM11 10h-1v1a1 1 0 0 1-2 0v-1H7a1 1 0 0 1
+          0-2h1V7a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2z">
+        </path>
+      </svg>
+    </span>
+  );
+}
+
+export const shareIcon = (iconSize, iconColor) => {
+  iconSize = iconSize.toString();
+  const iconStyle = {color: iconColor, fill:"currentColor"};
+  return (
+    <span className="share-icon">
+      <svg height={iconSize} width={iconSize} viewBox={"0 0 18 18"}
+        style={iconStyle}>
+        <path d="M17.714 6.43L13 10.356v-3.03c-1 0-5.097 1.47-6.286
+          3.62.274-3.08 4.286-5.5 6.286-5.5V2.5l4.714 3.93zM3
+          4v10h11v-2.5l1-1V15H2V3h8.5l-1 1H3z">
+        </path>
+      </svg>
+    </span>
+  );
+}
+
+export const saveIcon = (iconSize, iconColor) => {
+  iconSize = iconSize.toString();
+  const iconStyle = {color: iconColor, fill:"currentColor"};
+  return (
+      <svg height={iconSize} width={iconSize} viewBox={"0 0 14 14"}
+        style={iconStyle}>
+        <path d="M9 1H5a2 2 0 0 0-2 2v10l4-3 4 3V3a2 2 0 0 0-2-2z">
+        </path>
+      </svg>
+  );
+}
+
 export const restaurantIcon = (iconSize, iconColor) => {
   iconSize = iconSize.toString();
   const iconStyle = {color: iconColor, fill:"currentColor"};
