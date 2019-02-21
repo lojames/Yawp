@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { starsStr, imageOffset } from '../../util/stars'
 
 const BusinessReview = ({ review }) => {
-  console.log(review);
   return (
     <li>
       <div className="review-profile-pic-wrapper">
