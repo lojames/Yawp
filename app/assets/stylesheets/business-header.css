@@ -1,12 +1,11 @@
-.main-business-wrap {
+.main-business-header-wrap {
   min-width: 1020px;
-  background-color: rgb(245, 245, 245);
-  border-bottom: 1px solid rgb(230, 230, 230);
+  overflow: hidden;
 }
 
-.main-business-container {
+.main-business-header-container {
   margin: 0 auto;
-  padding: 15px 15px 0 15px;
+  padding: 15px 15px 24px 15px;
   width: 960px;
 }
 

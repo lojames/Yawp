@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GeneralHeader from '../header/general_header';
 import BusinessHeader from './business_header';
+import BusinessSubheader from './business_subheader';
+import BusinessReviewsContainer from './business_reviews_container';
+import BusinessHoursContainer from './business_hours_container';
+import Footer from '../footer/footer';
 
 class Business extends React.Component{
   componentDidMount(){
@@ -20,7 +24,26 @@ class Business extends React.Component{
       <>
         <GeneralHeader />
         <div style={{height: "40px"}}></div>
-        <BusinessHeader business={this.props.business} />
+        <div className="main-business-header-wrap">
+          <div className="main-business-header-container">
+            <BusinessHeader business={this.props.business}/>
+            <BusinessSubheader business={this.props.business} images={this.props.images}/>
+          </div>
+        </div>
+
+        <div className="main-business-container">
+          <div className="left-panel">
+            <BusinessReviewsContainer business={this.props.business} reviews={this.props.reviews}/>
+          </div>
+
+          <div className="right-panel">
+            <BusinessHoursContainer businessHours={this.props.business.business_hours}/>
+          </div>
+        </div>
+
+        <div className='main-footer-container'>
+          <Footer />
+        </div>
       </>
     );
   }

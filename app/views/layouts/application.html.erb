@@ -12,6 +12,7 @@
       window.userData = <%= (get_location) %>
       window.algApiKey = "<%= Rails.application.credentials.algolia[:api_key] %>"
       window.algAppId = "<%= Rails.application.credentials.algolia[:app_id] %>"
+      window.goApiKey = "<%= Rails.application.credentials.google[:api_key] %>"
     </script>
   </head>
 

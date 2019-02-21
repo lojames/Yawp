@@ -155,7 +155,9 @@ export const coffeeIcon = (iconSize, iconColor) => {
     <span className="coffee-icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M19 13h-1a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V5h15a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3zm1-5c0-.55-.45-1-1-1h-1v4h1c.55 0 1-.45 1-1V8zm2 10a1 1 0 0 1-1 1H3a1 1 0 0 1 0-2h18a1 1 0 0 1 1 1z">
+        <path d="M19 13h-1a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V5h15a3 3 0 0 1 3
+          3v2a3 3 0 0 1-3 3zm1-5c0-.55-.45-1-1-1h-1v4h1c.55 0 1-.45 1-1V8zm2
+          10a1 1 0 0 1-1 1H3a1 1 0 0 1 0-2h18a1 1 0 0 1 1 1z">
         </path>
       </svg>
     </span>
@@ -169,7 +171,14 @@ export const artsIcon = (iconSize, iconColor) => {
     <span className="arts-icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M11.85 3c-4.73.08-8.7 3.99-8.85 8.72-.02.62.03 1.23.13 1.82A3.003 3.003 0 0 0 6.09 16H11c.55 0 1 .45 1 1v.19c0 2.3 2.49 3.76 4.49 2.61A9.002 9.002 0 0 0 11.85 3zM8 11.5c-.83 0-1.5-.67-1.5-1.5S7.17 8.5 8 8.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3 8c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1-5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z">
+        <path d="M11.85 3c-4.73.08-8.7 3.99-8.85 8.72-.02.62.03 1.23.13
+          1.82A3.003 3.003 0 0 0 6.09 16H11c.55 0 1 .45 1 1v.19c0 2.3 2.49
+          3.76 4.49 2.61A9.002 9.002 0 0 0 11.85 3zM8 11.5c-.83
+          0-1.5-.67-1.5-1.5S7.17 8.5 8 8.5s1.5.67 1.5 1.5-.67 1.5-1.5
+          1.5zm4-3c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67
+          1.5-1.5 1.5zm3 8c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+          1.5-.67 1.5-1.5 1.5zm1-5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5
+          1.5.67 1.5 1.5-.67 1.5-1.5 1.5z">
         </path>
       </svg>
     </span>
@@ -183,7 +192,8 @@ export const professionalServicesIcon = (iconSize, iconColor) => {
     <span className="professional-services-icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M19 20H5a3 3 0 0 1-3-3v-4h8v3h4v-3h8v4a3 3 0 0 1-3 3zM2 7h6V4h8v3h6v5H2V7zm8 0h4V6h-4v1z">
+        <path d="M19 20H5a3 3 0 0 1-3-3v-4h8v3h4v-3h8v4a3 3 0 0 1-3
+          3zM2 7h6V4h8v3h6v5H2V7zm8 0h4V6h-4v1z">
         </path>
       </svg>
     </span>
@@ -197,7 +207,10 @@ export const petsIcon = (iconSize, iconColor) => {
     <span className="pets--icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M16.956 14.106l-7.07-7.07A2.5 2.5 0 0 0 6.35 3.498a2.49 2.49 0 0 0-.698 2.13 2.493 2.493 0 0 0-2.13.697A2.5 2.5 0 0 0 7.057 9.86l7.07 7.07a2.5 2.5 0 0 0 3.536 3.538 2.49 2.49 0 0 0 .698-2.13 2.49 2.49 0 0 0 2.134-.7 2.5 2.5 0 1 0-3.536-3.534z">
+        <path d="M16.956 14.106l-7.07-7.07A2.5 2.5 0 0 0 6.35 3.498a2.49
+          2.49 0 0 0-.698 2.13 2.493 2.493 0 0 0-2.13.697A2.5 2.5 0 0 0
+          7.057 9.86l7.07 7.07a2.5 2.5 0 0 0 3.536 3.538 2.49 2.49 0 0 0
+          .698-2.13 2.49 2.49 0 0 0 2.134-.7 2.5 2.5 0 1 0-3.536-3.534z">
         </path>
     </svg>
     </span>
@@ -211,7 +224,8 @@ export const realEstateIcon = (iconSize, iconColor) => {
     <span className="reaal-estate-icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M12 3l-8.48 9.327C2.938 12.97 3.393 14 4.26 14H5v7h5v-5h4v5h5v-7h.74c.868 0 1.323-1.03.74-1.673L12 3z">
+        <path d="M12 3l-8.48 9.327C2.938 12.97 3.393 14 4.26
+          14H5v7h5v-5h4v5h5v-7h.74c.868 0 1.323-1.03.74-1.673L12 3z">
         </path>
       </svg>
     </span>
@@ -225,7 +239,9 @@ export const localServicesIcon = (iconSize, iconColor) => {
     <span className="local-services-icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M21 10h-8.35A5.996 5.996 0 0 0 1 12a5.996 5.996 0 0 0 11.65 2H14v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a2 2 0 0 0 0-4zM7 14a2 2 0 1 1 0-4 2 2 0 0 1 0 4z">
+        <path d="M21 10h-8.35A5.996 5.996 0 0 0 1 12a5.996 5.996 0 0 0
+          11.65 2H14v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h1v1a1 1 0 0 0 1
+          1h1a1 1 0 0 0 1-1v-1a2 2 0 0 0 0-4zM7 14a2 2 0 1 1 0-4 2 2 0 0 1 0 4z">
         </path>
       </svg>
     </span>
@@ -239,7 +255,13 @@ export const eventPlanningIcon = (iconSize, iconColor) => {
     <span className="event-planning-icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M15.14 14.96L17 18h-2v5h-1v-5h-2l1.86-3.04C10.85 14.586 8.5 11.616 8.5 8c0-3.87 2.69-7 6-7s6 3.13 6 7c0 3.617-2.35 6.587-5.36 6.96zM12.39 3.55c-.54-.14-1.14.39-1.36 1.19-.21.8.05 1.57.58 1.71.54.14 1.14-.39 1.36-1.19.21-.8-.05-1.57-.58-1.71zm-.45 11.89a4.737 4.737 0 0 1-2.82 1.49L10.5 19H9v4H8v-4H6.5l1.367-2.05c-2.53-.365-4.487-2.88-4.487-5.93 0-3.1 2.02-5.66 4.61-5.95-.32.91-.49 1.9-.49 2.93 0 3.38 1.84 6.27 4.44 7.44z">
+        <path d="M15.14 14.96L17 18h-2v5h-1v-5h-2l1.86-3.04C10.85 14.586
+          8.5 11.616 8.5 8c0-3.87 2.69-7 6-7s6 3.13 6 7c0 3.617-2.35
+          6.587-5.36 6.96zM12.39 3.55c-.54-.14-1.14.39-1.36 1.19-.21.8.05
+          1.57.58 1.71.54.14 1.14-.39 1.36-1.19.21-.8-.05-1.57-.58-1.71zm-.45
+          11.89a4.737 4.737 0 0 1-2.82 1.49L10.5
+          19H9v4H8v-4H6.5l1.367-2.05c-2.53-.365-4.487-2.88-4.487-5.93 0-3.1
+          2.02-5.66 4.61-5.95-.32.91-.49 1.9-.49 2.93 0 3.38 1.84 6.27 4.44 7.44z">
         </path>
       </svg>
     </span>
@@ -253,7 +275,10 @@ export const educationIcon = (iconSize, iconColor) => {
     <span className="education-icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M9.994 18H19v1H9.993v-1zm7.004-1H8.493c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5h9.505a1 1 0 0 1 0 2h-9.28c-1.812 0-3.467-1.277-3.7-3.075-.09-.7-.027-1.925-.027-1.925V4a2 2 0 0 1 2.004-2H17a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2z">
+        <path d="M9.994 18H19v1H9.993v-1zm7.004-1H8.493c-.827
+          0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5h9.505a1 1 0 0 1 0
+          2h-9.28c-1.812 0-3.467-1.277-3.7-3.075-.09-.7-.027-1.925-.027-1.925V4a2
+          2 0 0 1 2.004-2H17a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2z">
         </path>
       </svg>
     </span>
@@ -267,7 +292,8 @@ export const religiousIcon = (iconSize, iconColor) => {
     <span className="religious-icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M18.5 11L16 14.5v-6L12 3 8 8.5v6L5.5 11 3 14.5V21h7v-4h4v4h7v-6.5L18.5 11z">
+        <path d="M18.5 11L16 14.5v-6L12 3 8 8.5v6L5.5 11 3
+          14.5V21h7v-4h4v4h7v-6.5L18.5 11z">
         </path>
       </svg>
     </span>
@@ -281,7 +307,8 @@ export const governmentIcon = (iconSize, iconColor) => {
     <span className="government-icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M21 11V9h-1l-8-6-8 6H3v2h2v7H4v1H3v2h18v-2h-1v-1h-1v-7h2zm-8 7h-2v-7h2v7zm-6-7h2v7H7v-7zm10 7h-2v-7h2v7z">
+        <path d="M21 11V9h-1l-8-6-8 6H3v2h2v7H4v1H3v2h18v-2h-1v-1h-1v-7h2zm-8
+          7h-2v-7h2v7zm-6-7h2v7H7v-7zm10 7h-2v-7h2v7z">
         </path>
       </svg>
     </span>
@@ -295,7 +322,8 @@ export const localFlavorIcon = (iconSize, iconColor) => {
     <span className="local-flavor-icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M12 1.5l2.61 6.727 6.89.53-5.278 4.688 1.65 7.055L12 16.67 6.13 20.5l1.648-7.055L2.5 8.757l6.89-.53L12 1.5z">
+        <path d="M12 1.5l2.61 6.727 6.89.53-5.278 4.688 1.65 7.055L12 16.67
+          6.13 20.5l1.648-7.055L2.5 8.757l6.89-.53L12 1.5z">
         </path>
       </svg>
     </span>
@@ -323,7 +351,12 @@ export const travelIcon = (iconSize, iconColor) => {
     <span className="travel-icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M20.4 13.61a1.924 1.924 0 0 0-1.825-.505l-2.203.55-3.228-3.227 5.973-4.887-.438-.436a1.92 1.92 0 0 0-2.117-.407L10.157 7.44 6.732 4.018c-.75-.75-2.644-1.43-3.394-.68-.75.75-.07 2.646.68 3.395l3.423 3.425-2.743 6.408a1.92 1.92 0 0 0 .407 2.114l.44.437 4.886-5.973 3.227 3.228-.55 2.203a1.92 1.92 0 0 0 .504 1.824l.59.586 2.717-4.073 4.073-2.716-.59-.59z">
+        <path d="M20.4 13.61a1.924 1.924 0 0 0-1.825-.505l-2.203.55-3.228-3.227
+          5.973-4.887-.438-.436a1.92 1.92 0 0 0-2.117-.407L10.157 7.44 6.732
+          4.018c-.75-.75-2.644-1.43-3.394-.68-.75.75-.07 2.646.68 3.395l3.423
+          3.425-2.743 6.408a1.92 1.92 0 0 0 .407 2.114l.44.437 4.886-5.973 3.227
+          3.228-.55 2.203a1.92 1.92 0 0 0 .504 1.824l.59.586 2.717-4.073
+          4.073-2.716-.59-.59z">
         </path>
       </svg>
     </span>
@@ -338,7 +371,8 @@ export const financialServicesIcon = (iconSize, iconColor) => {
     <span className="financial-services-icon">
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
-        <path d="M6 19v-2h14V9h2v10H6zM2 5h16v10H2V5zm8 7.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z">
+        <path d="M6 19v-2h14V9h2v10H6zM2 5h16v10H2V5zm8 7.5a2.5 2.5 0 1 0 0-5
+          2.5 2.5 0 0 0 0 5z">
         </path>
       </svg>
     </span>
@@ -353,6 +387,57 @@ export const massMediaIcon = (iconSize, iconColor) => {
       <svg height={iconSize} viewBox="0 0 24 24"
         width={iconSize} style={iconStyle}>
         <path d="M19 6h-6.586l2.293-2.293a1 1 0 1 0-1.414-1.414L10 5.586 6.707 2.293a1 1 0 1 0-1.414 1.414L7.586 6H5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3zm-3 11c0 .55-.45 1-1 1H5c-.55 0-1-.45-1-1V9c0-.55.45-1 1-1h10c.55 0 1 .45 1 1v8zm3-4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm0-3c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z">
+        </path>
+      </svg>
+    </span>
+  );
+}
+
+export const addressIcon = (iconSize, iconColor) => {
+  iconSize = iconSize.toString();
+  const iconStyle = {color: iconColor, fill:"currentColor", position: "relative", display: "inline-block"};
+  return (
+    <span className="address-icon" style={{position: "absolute"}}>
+      <svg height={iconSize} viewBox="0 0 18 18"
+        width={iconSize} style={iconStyle}>
+        <path d="M14 7A5 5 0 0 0 4 7c0 1.97 1.15 3.658 2.806 4.472h-.17L9
+          16l2.363-4.528h-.17C12.85 10.658 14 8.97 14 7zM9 5a2 2 0 1 1 0 4
+          2 2 0 0 1 0-4z">
+        </path>
+      </svg>
+    </span>
+  );
+}
+
+export const phoneIcon = (iconSize, iconColor) => {
+  iconSize = iconSize.toString();
+  const iconStyle = {color: iconColor, fill:"currentColor", position: "relative"};
+  return (
+    <span className="phone-icon" style={{position: "absolute"}}>
+      <svg height={iconSize} viewBox="0 0 18 18"
+        width={iconSize} style={iconStyle}>
+        <path d="M15.862 12.526l-2.91-1.68a.442.442 0 0 0-.486.087l-1.58
+          1.687a.857.857 0 0 1-.52.232s-1.083.03-3.13-1.985c-2.046-2.015-2.054-3.12-2.054-3.12
+          0-.17.094-.41.21-.533L6.85 5.656a.49.49 0 0 0
+          .08-.504L5.295 2.14c-.073-.155-.228-.18-.345-.058L2.26 4.924a1.07 1.07
+          0 0 0-.248.53s-.34 2.927 3.75 6.955c4.093 4.025 6.96 3.59 6.96
+          3.59.167-.027.4-.148.516-.27l2.684-2.845c.117-.123.09-.285-.062-.36z">
+        </path>
+      </svg>
+    </span>
+  );
+}
+
+export const websiteIcon = (iconSize, iconColor) => {
+  iconSize = iconSize.toString();
+  const iconStyle = {color: iconColor, fill:"currentColor", position: "relative"};
+  return (
+    <span className="website-icon" style={{position: "absolute"}}>
+      <svg height={iconSize} viewBox="0 0 18 18"
+        width={iconSize} style={iconStyle}>
+        <path d="M14 15H4c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3v1H4v10h10v-3h1v3c0
+          .55-.45 1-1 1zm-5.12-4.465L7.463 9.12l3.83-3.827L9
+          3h6v6l-2.293-2.293-3.828 3.828z">
         </path>
       </svg>
     </span>

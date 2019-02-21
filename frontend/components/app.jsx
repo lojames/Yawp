@@ -8,12 +8,13 @@ import { AuthRoute } from '../util/route_util'
 import BusinessContainer from './business/business_container'
 
 const App = () => (
-  <div>
+  <Switch>
     <Route exact path="/" component={ SplashPage }/>
     <Route exact path="/biz/:id" component= { BusinessContainer }/>
     <AuthRoute path="/login" component={ LoginFormContainer }/>
     <AuthRoute path="/signup" component={ SignupFormContainer }/>
-  </div>
+    <Redirect to="/404" />
+  </Switch>
 );
 
 export default withRouter(App);

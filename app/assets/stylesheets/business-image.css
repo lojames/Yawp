@@ -1,0 +1,74 @@
+.business-image img{
+  max-width: initial;
+  vertical-align: middle;
+}
+
+.business-image {
+  height: 220px;
+  width: 220px;
+  overflow: hidden;
+  transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+}
+
+#image0{
+  position: absolute;
+  left: 0;
+}
+
+#image1 {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  left: 210px;
+  z-index: 1;
+  box-shadow: 0 0 25px -3px rgba(0,0,0,0.5);
+}
+
+#image2 {
+  position: absolute;
+  left: 440px;
+}
+
+#image0:hover, #image2:hover {
+  width: 250px;
+  height: 250px;
+  z-index: 2;
+  margin-left: -15px;
+  box-shadow: 0 0 25px -3px rgba(0,0,0,0.5);
+}
+
+.business-image-caption-container{
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  color: white;
+  overflow: hidden;
+  font-weight: bold;
+  line-height: 24px;
+  padding: 3px 6px;
+  background-color: rgba(0,0,0,0.5);
+  transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+}
+
+#image-caption1{
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.business-image:hover div{
+  visibility: visible;
+  opacity: 1;
+}

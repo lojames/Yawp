@@ -5,7 +5,7 @@ const imagesReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_BUSINESSES:
-      return merge({}, state, action.images)
+      return merge({}, action.images)
     case RECEIVE_BUSINESS:
       return merge({}, action.images)
     default:

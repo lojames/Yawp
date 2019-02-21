@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { fetchBusiness } from '../../actions/business_actions';
+import { fetchBusiness, fetchImages } from '../../actions/business_actions';
 import Business from './business';
 
 const msp = (state, ownProps) => {
@@ -21,10 +21,11 @@ const msp = (state, ownProps) => {
     business_hours: [],
     image_ids: [],
   }
+
   return ({
     business: state.entities.businesses[ownProps.match.params.id] || defaultBusiness,
-    images: state.entities.images,
-    reviews: state.entities.reviews,
+    images: state.entities.businesses.images,
+    reviews: state.entities.businesses.reviews,
   })
 };
 
