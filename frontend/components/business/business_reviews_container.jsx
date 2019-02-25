@@ -4,7 +4,6 @@ import BusinessHour from './business_hour';
 import Review from './business_review';
 
 const businessReviews = (reviews, business) => {
-  console.log(business.review_ids);
   if (reviews === undefined || business.review_ids === undefined) {
     return (
       <>

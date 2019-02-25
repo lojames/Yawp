@@ -31,8 +31,8 @@ const BusinessImages = ({ business, images }) => {
     caption.style.visibility = "visible";
   }
 
-  if (images!==undefined){
-    const keys = Object.keys(images);
+  if (business.image_ids!==undefined){
+    const keys = business.image_ids;
     if (keys.length < 3) {
       background = {
         backgroundRepeat: "no-repeat",
@@ -42,7 +42,7 @@ const BusinessImages = ({ business, images }) => {
       }
     }
 
-    for (let i = 0; i < keys.length; i++){
+    for (let i = 0; i < keys.length && i < 3; i++){
       imageStyle[i] = {display: "block"};
       imageUrl[i] = images[keys[i]].image_url;
       imageCaption[i] = images[keys[i]].comment;

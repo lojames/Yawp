@@ -37,7 +37,7 @@ end
 end
 
 json.images do
-  @images.limit(2).each do |image|
+  @images.limit(3).each do |image|
     json.set! image.id do
       json.extract! image, :id, :image_url, :comment
     end

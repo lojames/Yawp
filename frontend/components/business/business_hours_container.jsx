@@ -1,14 +1,18 @@
 import React from 'react';
 import BusinessHour from './business_hour'
 
-const businessHoursRows = (businessHours) => (
-  businessHours.map( businessHour => (
-    <BusinessHour
-      businessHour={businessHour}
-      key={businessHour[0]}
-    />
-  ))
-);
+const businessHoursRows = (businessHours) => {
+  if (businessHours) {
+    return (
+      businessHours.map( businessHour => (
+        <BusinessHour
+          businessHour={businessHour}
+          key={businessHour[0]}
+        />
+      ))
+    )
+  }
+};
 
 const BusinessHoursContainer = ({ businessHours }) => {
 

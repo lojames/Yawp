@@ -18,7 +18,9 @@ const BusinessReview = ({ review }) => {
           </div>
           <div> {review.date} </div>
         </div>
-        {review.body}
+          <p style={{whiteSpace: "pre-line"}}>
+            {review.body}
+          </p>
       </div>
 
     </li>
