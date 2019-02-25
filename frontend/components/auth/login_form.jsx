@@ -41,6 +41,7 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     const errors = document.getElementById("error-alert-box-id");
+    console.log(this.props.errors)
     if (this.props.errors.length === 0)
       return "";
     else {
