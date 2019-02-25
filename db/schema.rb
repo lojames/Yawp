@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_21_214903) do
+ActiveRecord::Schema.define(version: 2019_02_25_024521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 2018_11_21_214903) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["business_id"], name: "index_business_hours_on_business_id"
+  end
+
+  create_table "business_properties", force: :cascade do |t|
+    t.integer "business_id", null: false
+    t.integer "property_id", null: false
+    t.index ["business_id", "property_id"], name: "index_business_properties_on_business_id_and_property_id", unique: true
+    t.index ["business_id"], name: "index_business_properties_on_business_id"
+    t.index ["property_id"], name: "index_business_properties_on_property_id"
   end
 
   create_table "businesses", force: :cascade do |t|
@@ -55,6 +63,7 @@ ActiveRecord::Schema.define(version: 2018_11_21_214903) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ref"
     t.index ["name"], name: "index_categories_on_name", unique: true
   end
 
@@ -69,6 +78,14 @@ ActiveRecord::Schema.define(version: 2018_11_21_214903) do
     t.index ["business_id"], name: "index_images_on_business_id"
     t.index ["review_id"], name: "index_images_on_review_id"
     t.index ["user_id"], name: "index_images_on_user_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "value", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["key", "value"], name: "index_properties_on_key_and_value", unique: true
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -96,6 +113,8 @@ ActiveRecord::Schema.define(version: 2018_11_21_214903) do
     t.date "birthdate"
     t.string "phone_number"
     t.string "gender"
+    t.string "city", null: false
+    t.string "state", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end

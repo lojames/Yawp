@@ -8,10 +8,13 @@
 
 Image.destroy_all
 Review.destroy_all
+Category.destroy_all
 BusinessCategory.destroy_all
 BusinessHour.destroy_all
 Business.destroy_all
 User.destroy_all
+
+puts "END OF DESTROYS"
 
 categories = "Active Life (active)
 ATV Rentals/Tours (atvrentals)
@@ -1323,21 +1326,29 @@ Vape Shops (vapeshops)
 Vitamins & Supplements (vitaminssupplements)
 Watches (watches)
 Wholesale Stores (wholesale_stores)
-Wigs"
+Wigs (wigs)"
 
-categories = categories.split(/ \(.+?\)\s/).uniq
+categories = categories.split("\n").uniq
+categories_ref = []
+categories_name = []
 
-Category.destroy_all
-categories.each do |category|
-  Category.create!(name: category)
+categories.each_with_index do |line, i|
+  categories_name << line.match(/.*(?= \()/)[0]
+  categories_ref << line.scan(/(?<=\().*?(?=\))/)[-1]
 end
 
-u1 = User.create(email: "a@gmail.com", first_name: "Anthony", last_name: "Hopkins", password: "starwars", zip_code: "12340")
-u2 = User.create(email: "b@gmail.com", first_name: "John", last_name: "Doe", password: "starwars", zip_code: "12340")
-u3 = User.create(email: "c@gmail.com", first_name: "Oliver", last_name: "Baller", password: "starwars", zip_code: "12340")
-u4 = User.create(email: "d@gmail.com", first_name: "Jimmy", last_name: "Carr", password: "starwars", zip_code: "12340")
-u5 = User.create(email: "e@gmail.com", first_name: "Christina", last_name: "Aguilera", password: "starwars", zip_code: "12340")
-u6 = User.create(email: "f@gmail.com", first_name: "Pharel", last_name: "Williams", password: "starwars", zip_code: "12340")
+categories.each_with_index do |category, i|
+  Category.create!(name: categories_name[i], ref: categories_ref[i])
+end
+
+puts "START"
+u1 = User.create(email: "a@gmail.com", first_name: "Anthony", last_name: "Hopkins", password: "starwars", zip_code: "10004", city: "New York", state: "NY")
+u2 = User.create(email: "b@gmail.com", first_name: "John", last_name: "Doe", password: "starwars", zip_code: "10004", city: "New York", state: "NY")
+u3 = User.create(email: "c@gmail.com", first_name: "Oliver", last_name: "Baller", password: "starwars", zip_code: "10004", city: "New York", state: "NY")
+u4 = User.create(email: "d@gmail.com", first_name: "Jimmy", last_name: "Carr", password: "starwars", zip_code: "10004", city: "New York", state: "NY")
+u5 = User.create(email: "e@gmail.com", first_name: "Christina", last_name: "Aguilera", password: "starwars", zip_code: "10004", city: "New York", state: "NY")
+u6 = User.create(email: "f@gmail.com", first_name: "Pharel", last_name: "Williams", password: "starwars", zip_code: "10004", city: "New York", state: "NY")
+puts "END"
 
 b1 = Business.create(name: "App Academy NYC", neighborhood: "Midtown West", street_address: "22 W 38th St", city: "New York", state: "NY", zip: "10018", website: "appacademy.io", latitude: 40.751282, longitude: -73.98399)
 b2 = Business.create(name: "Hack Reactor", neighborhood: "South Village", street_address: "315 Hudson St", city: "New York", state: "NY", zip: "10013", phone: "(212) 709-4613", website: "hackreactor.com/new-york-city-campus", latitude: 40.726302, longitude: -74.00807)

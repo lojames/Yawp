@@ -1,5 +1,6 @@
 class Category < ApplicationRecord
-  validates :name, presence: true, uniqueness: true
+  validates :name, :ref, presence: true
+  validates :ref, uniqueness: true
 
   has_many :business_categories
   has_many :businesses, through: :business_categories
