@@ -2,18 +2,6 @@ import React from 'react';
 import AlgoliaPlaces from 'algolia-places-react';
 import { Redirect, withRouter } from 'react-router-dom';
 
-const search_svg = () => {
-  return (
-    <svg id="24x24_search" height="100%" viewBox="0 0 24 24" width="100%">
-      <path d="M20.753 19.34l-4.295-4.297A7.46 7.46 0 0 0 18 10.5a7.5 7.5 0 1
-        0-7.5 7.5 7.46 7.46 0 0 0 4.543-1.542l4.296 4.295a1 1 0 1 0
-        1.412-1.414zM10.5 16A5.506 5.506 0 0 1 5 10.5C5 7.467 7.467 5 10.5
-        5S16 7.467 16 10.5 13.533 16 10.5 16z">
-      </path>
-    </svg>
-  );
-}
-
 class SearchForm extends React.Component{
   constructor(props){
     super(props);
@@ -22,9 +10,12 @@ class SearchForm extends React.Component{
       lat: "",
       lon: "",
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFindChange = this.handleFindChange.bind(this);
+  }
+
+  componentDidUpdate(){
+
   }
 
   handleSubmit(e) {
@@ -33,15 +24,7 @@ class SearchForm extends React.Component{
     if (this.state.lat === null){
       this.setState({lat: latlng.lat, lon: latlng.lng});
     }
-
-    if (this.props.location.pathname === '/search'){
-      <Redirect to={{
-          pathname: '/search',
-        }}
-      />
-    } else {
-      this.props.history.push('/search');
-    }
+    () =>  <Redirect to='/search' />;
   }
 
 
@@ -50,10 +33,13 @@ class SearchForm extends React.Component{
   }
 
   handleNearChange(suggestion){
-    this.setState({lat: suggestion.latlng.lat, lon: suggestion.latlng.lng});
+    let city, state;
+    (suggestion.city) ? city = suggestion.city : city = suggestion.name;
+    (suggestion.administrative) ? state = `, ${suggestion.administrative}` : state = "";
+    this.setState({lat: suggestion.latlng.lat.to_f, lon: suggestion.latlng.lng.to_f});
     this.setCookie("lat", suggestion.latlng.lat);
     this.setCookie("lon", suggestion.latlng.lng);
-    this.setCookie("userLocation", `${suggestion.city}, ${suggestion.administrative}`);
+    this.setCookie("userLocation", `${city}${state}`);
   }
 
   highlightText(id) {
@@ -75,6 +61,7 @@ class SearchForm extends React.Component{
 
   render(){
     if (!this.getCookie("lat")){
+      this.setState({lat: window.userData.latitude.to_f, lon: window.userData.longitude.to_f});
       this.setCookie("lat", window.userData.latitude);
       this.setCookie("lon", window.userData.longitude);
       this.setCookie("userLocation", `${window.userData.city}, ${window.userData.region_name}`);

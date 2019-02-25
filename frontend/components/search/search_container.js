@@ -1,17 +1,17 @@
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { fetchBusinesses } from '../../actions/business_actions';
 import Search from './search';
 
 const msp = (state) => {
   return ({
     businesses: state.entities.businesses || {},
-    images: state.entities.businesses.images,
-    reviews: state.entities.businesses.reviews,
+    images: state.entities.businesses.images || {},
+    reviews: state.entities.businesses.reviews || {},
   })
 };
 
 const mdp = dispatch => ({
-  fetchBusinesses: () => dispatch(fetchBusinesses())
+  fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters))
 });
 
 export default connect(msp, mdp)(Search)
