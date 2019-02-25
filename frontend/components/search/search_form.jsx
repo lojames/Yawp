@@ -65,8 +65,7 @@ class SearchForm extends React.Component{
 
   getCookie(name) {
     const regexp = new RegExp("(?<="+name+"=).*?(?=;)|(?<="+name+"=).*?$");
-
-    const result = regexp.exec(str);
+    const result = regexp.exec(document.cookie);
     return (result === null) ? null : result[0];
   }
 
