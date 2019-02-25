@@ -80,7 +80,7 @@ class SearchForm extends React.Component{
       this.setCookie("userLocation", `${window.userData.city}, ${window.userData.region_name}`);
     }
     return (
-      <form className="search-bar" onSubmit={this.handleSubmit}>
+      <form className="search-bar" onSubmit={this.handleSubmit} autoComplete="off">
         <div className="search-find-bar">
           <label className="search-find-label">
             <span className="field-name">Find</span>

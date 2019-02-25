@@ -5,6 +5,7 @@ import Footer from '../footer/footer';
 
 class Search extends React.Component{
   componentDidMount(){
+    console.log(this.props.busininesses)
     this.props.fetchBusinesses();
   }
 
