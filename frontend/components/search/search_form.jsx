@@ -1,30 +1,60 @@
 import React from 'react';
 import AlgoliaPlaces from 'algolia-places-react';
-import { Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class SearchForm extends React.Component{
+
   constructor(props){
+    console.log("SF PROPS");
     super(props);
     this.state = {
       query: "",
       lat: "",
       lon: "",
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFindChange = this.handleFindChange.bind(this);
   }
 
-  componentDidUpdate(){
-
+  componentDidMount(){
+    console.log("SF DID MOUNT");
+    if (!this.getCookie("lat")){
+      this.setState({lat: window.userData.latitude, lon: window.userData.longitude});
+      this.setCookie("lat", window.userData.latitude);
+      this.setCookie("lon", window.userData.longitude);
+      this.setCookie("userLocation", `${window.userData.city}, ${window.userData.region_name}`);
+    } else {
+      this.setState({
+        lat: parseFloat(this.getCookie("lat")),
+        lon: parseFloat(this.getCookie("lon")),
+        userLocation: this.getCookie("userLocation")
+      });
+    }
   }
 
-  handleSubmit(e) {
-    e.preventDefault();;
+  componentDidUpdate(){
+    console.log("SF DID UPDATE");
+    console.log(this.props);
+  }
 
-    if (this.state.lat === null){
-      this.setState({lat: latlng.lat, lon: latlng.lng});
+
+
+  handleSubmit(e) {
+    e.preventDefault();
+    if (this.props.location.pathname === '/search'){
+      this.props.history.replace({
+        pathname: '/search',
+        search: `?query=${this.state.query}&lat=${this.state.lat}&lon=${this.state.lon}`,
+        state: this.state
+      });
+    } else {
+      this.props.history.push({
+        pathname: '/search',
+        search: `?query=${this.state.query}&lat=${this.state.lat}&lon=${this.state.lon}`,
+        state: this.state,
+      });
     }
-    () =>  <Redirect to='/search' />;
   }
 
 
@@ -36,7 +66,7 @@ class SearchForm extends React.Component{
     let city, state;
     (suggestion.city) ? city = suggestion.city : city = suggestion.name;
     (suggestion.administrative) ? state = `, ${suggestion.administrative}` : state = "";
-    this.setState({lat: suggestion.latlng.lat.to_f, lon: suggestion.latlng.lng.to_f});
+    this.setState({lat: parseFloat(suggestion.latlng.lat), lon: parseFloat(suggestion.latlng.lng)});
     this.setCookie("lat", suggestion.latlng.lat);
     this.setCookie("lon", suggestion.latlng.lng);
     this.setCookie("userLocation", `${city}${state}`);
@@ -60,12 +90,8 @@ class SearchForm extends React.Component{
   }
 
   render(){
-    if (!this.getCookie("lat")){
-      this.setState({lat: window.userData.latitude.to_f, lon: window.userData.longitude.to_f});
-      this.setCookie("lat", window.userData.latitude);
-      this.setCookie("lon", window.userData.longitude);
-      this.setCookie("userLocation", `${window.userData.city}, ${window.userData.region_name}`);
-    }
+    console.log("SF RENDER");
+    console.log(this.props);
     return (
       <form className="search-bar" onSubmit={this.handleSubmit} autoComplete="off">
         <div className="search-find-bar">

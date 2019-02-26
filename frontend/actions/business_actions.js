@@ -22,6 +22,6 @@ export const fetchBusiness = id => dispatch => (
 );
 
 
-export const fetchBusinesses = filters => dispatch => (
-    APIBiz.fetchBusinesses(filters).then( businesses => dispatch(receiveBusinesses(businesses)))
+export const fetchBusinesses = query => dispatch => (
+    APIBiz.fetchBusinesses(query).then( businesses => dispatch(receiveBusinesses(businesses)))
 );

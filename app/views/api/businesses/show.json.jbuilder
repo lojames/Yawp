@@ -2,6 +2,10 @@ hours = @business.business_hours.map do |business_hour|
   [business_hour.day, business_hour.hours]
 end
 
+# business_images = @business.images.map {|image| image.id}
+# business_reviews = @business.reviews.map {|review| review.id }
+# num_reviews = @business.reviews.length
+# score = @business.reviews.map {|review| review.score}.reduce(:+)
 business_images = @images.map {|image| image.id }
 business_reviews = @reviews.map {|review| review.id }
 num_reviews = @reviews.length

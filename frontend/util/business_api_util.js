@@ -5,10 +5,9 @@ export const fetchBusiness = id => (
   })
 );
 
-export const fetchBusinesses = filters => (
+export const fetchBusinesses = query => (
   $.ajax({
     method: 'GET',
-    url: 'api/businesses',
-    filters
+    url: `api/businesses/${query}`,
   })
 );

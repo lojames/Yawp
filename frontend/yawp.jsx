@@ -21,9 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.fetchBusinesses = fetchBusinesses;
   ReactDOM.render(<Root store={store} />, root);
 
 });

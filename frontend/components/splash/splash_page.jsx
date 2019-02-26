@@ -1,7 +1,7 @@
 import React from 'react';
 import SplashHeader from '../header/splash_header';
-import SearchForm from '../search/search_form.jsx';
-import Footer from '../footer/footer.jsx';
+import SearchForm from '../search/search_form';
+import Footer from '../footer/footer';
 import SplashSearchNavBar from './splash_search_nav_bar'
 import SplashCategories from './splash_categories'
 
