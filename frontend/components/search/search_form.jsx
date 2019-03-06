@@ -8,8 +8,7 @@ class SearchForm extends React.Component{
   constructor(props){
     console.log("SF PROPS");
     super(props);
-    const queryStr = this.props.location.search.split("&lat=")[0].split("?query=")[1]
-    console.log(queryStr + "\n\n\n\n\n\n\n\n\n");
+    const queryStr = this.props.location.search.split("&lat=")[0].split("?query=")[1];
     const nearDefaultText = (this.props.location.pathname !== '/' && queryStr !== undefined) ? decodeURIComponent(queryStr) : '';
     this.state = {
       query: nearDefaultText,
@@ -25,14 +24,14 @@ class SearchForm extends React.Component{
   componentDidMount(){
     console.log("SF DID MOUNT");
     if (!getCookie("lat")){
+      setCookie("lat", window.userData.latitude);
+      setCookie("lon", window.userData.longitude);
+      setCookie("userLocation", `${window.userData.city}, ${window.userData.region_name}`);
       this.setState({
         lat: window.userData.latitude,
         lon: window.userData.longitude,
         userLocation: getCookie("userLocation"),
       });
-      setCookie("lat", window.userData.latitude);
-      setCookie("lon", window.userData.longitude);
-      setCookie("userLocation", `${window.userData.city}, ${window.userData.region_name}`);
     } else {
       this.setState({
         lat: parseFloat(getCookie("lat")),
@@ -88,16 +87,6 @@ class SearchForm extends React.Component{
       inputField.setSelectionRange(0, inputField.value.length);
     }
   }
-
-  // getCookie(name) {
-  //   const regexp = new RegExp("(?<="+name+"=).*?(?=;)|(?<="+name+"=).*?$");
-  //   const result = regexp.exec(document.cookie);
-  //   return (result === null) ? null : result[0];
-  // }
-  //
-  // setCookie(name, value) {
-  //   document.cookie = `${name} = ${value}`;
-  // }
 
   render(){
     console.log("SF RENDER");

@@ -31,7 +31,6 @@ const SearchHeader = ( {location, businesses} ) => {
           <div className='results-header-text'>
             <h1><b>{headerText}</b> in {locationStr}</h1>
           </div>
-
           <div className='results-showing-text'>
             {showingStr}
           </div>

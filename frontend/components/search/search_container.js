@@ -4,10 +4,11 @@ import Search from './search';
 
 const msp = (state) => {
   console.log("SEARCH MSP");
+  console.log(state);
   return ({
     businesses: state.entities.businesses || {},
-    images: state.entities.businesses.images || {},
-    reviews: state.entities.businesses.reviews || {},
+    images: state.entities.images,
+    reviews: state.entities.reviews,
   })
 };
 

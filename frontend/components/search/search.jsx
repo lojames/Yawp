@@ -16,16 +16,21 @@ class Search extends React.Component{
 
   componentDidMount(){
     console.log("SEARCH DID MOUNT");
-    if (this.props.location.search !== this.state.query) {
+    if ( this.props.location.search !== this.state.query ) {
       console.log(this.props.location.search);
       this.props.fetchBusinesses(this.props.location.search);
       this.setState({query: this.props.location.search});
     }
   }
 
-  componentDidUpdate(){
-    console.log("SEARCH UPDATE");
-    if (this.props.location.search !== this.state.query) {
+  componentDidUpdate(prevProps){
+    console.log("SEARCH UPDATE!");
+    console.log(prevProps);
+    console.log(this.props);
+    console.log(Object.keys(this.props.businesses));
+    console.log(Object.keys(prevProps.businesses));
+    if (JSON.stringify(this.props.businesses)!==JSON.stringify(prevProps.businesses)
+      || this.props.location.search !== this.state.query ) {
       this.props.fetchBusinesses(this.props.location.search);
       this.setState({query: this.props.location.search});
     }
@@ -34,12 +39,12 @@ class Search extends React.Component{
   render(){
     console.log("SEARCH RENDER");
     console.log(this.props);
+
     return (
       <>
         <GeneralHeader />
         <div style={{height: "40px"}}></div>
         <SearchHeader businesses={this.props.businesses} location={this.props.location}/>
-
         <div className="main-search-container">
           <div className="left-panel">
             <SearchBusinessesContainer {...this.props}/>

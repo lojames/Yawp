@@ -31,7 +31,7 @@ const BusinessImages = ({ business, images }) => {
     caption.style.visibility = "visible";
   }
 
-  if (business.image_ids!==undefined){
+  if (business.image_ids!==undefined && images!==undefined){
     const keys = business.image_ids;
     if (keys.length < 3) {
       background = {

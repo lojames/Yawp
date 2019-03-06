@@ -3,6 +3,8 @@ import SearchBusiness from './search_business';
 
 const searchBusinesses = (props) => {
 
+  console.log("SEARCH BUSINESS CONTAINER BACK CHECK");
+  console.log(Object.keys(props.businesses));
   return(
     Object.keys(props.businesses).map ( (id, idx) => (
       <SearchBusiness
@@ -12,6 +14,7 @@ const searchBusinesses = (props) => {
         idx={idx+1}
         reviews={props.reviews}
         images={props.images}
+        location={props.location}
         />
     ))
   )

@@ -11,10 +11,12 @@ export const receiveBusinesses = ( {businesses, reviews, images} ) => {
     images,
 }};
 
-export const receiveBusiness = ( business ) => {
+export const receiveBusiness = ( {businesses, reviews, images} ) => {
   return {
     type: RECEIVE_BUSINESS,
-    business
+    businesses,
+    reviews,
+    images,
 }};
 
 export const fetchBusiness = id => dispatch => (

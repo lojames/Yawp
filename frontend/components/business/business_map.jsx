@@ -9,7 +9,6 @@ const BusinessMap = ({ business }) => {
     websiteDisplay = 'none';
   } else {
     websiteDisplay = 'block';
-
   }
 
   return (

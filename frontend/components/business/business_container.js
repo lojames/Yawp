@@ -3,6 +3,8 @@ import { fetchBusiness, fetchImages } from '../../actions/business_actions';
 import Business from './business';
 
 const msp = (state, ownProps) => {
+  console.log("---------------------------------------------------------------------------------------------------")
+  console.log(state.entities);
   const defaultBusiness = {
     num_reviews: 0 ,
     SplashCategories: 0,
@@ -26,8 +28,8 @@ const msp = (state, ownProps) => {
 
   return ({
     business: state.entities.businesses[ownProps.match.params.id] || defaultBusiness,
-    images: state.entities.businesses.images,
-    reviews: state.entities.businesses.reviews,
+    images: state.entities.images,
+    reviews: state.entities.reviews,
   })
 };
 

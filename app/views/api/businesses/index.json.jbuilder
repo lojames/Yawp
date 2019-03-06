@@ -6,8 +6,8 @@ json.businesses do
       json.extract! business, :id, :name, :phone, :street_address, :neighborhood
       json.num_reviews  num_reviews
       json.score score ? score.fdiv(num_reviews) : 0
-      json.reviews [business.reviews.first.id] if business.reviews.first
-      json.images [business.images.first.id] if business.images.first
+      json.review_ids business.reviews.first ? [business.reviews.first.id] : []
+      json.image_ids business.images.first ? [business.images.first.id] : []
     end
   end
 end

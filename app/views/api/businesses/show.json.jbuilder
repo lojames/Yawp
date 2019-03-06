@@ -11,14 +11,16 @@ business_reviews = @reviews.map {|review| review.id }
 num_reviews = @reviews.length
 score = @reviews.map {|review| review.score}.reduce(:+)
 
-json.set! @business.id do
-  json.extract! @business, :id, :name, :neighborhood, :street_address, :city, :state,
-  :zip, :latitude, :longitude, :phone, :website, :price
-  json.business_hours hours
-  json.num_reviews num_reviews
-  json.score score ? score.fdiv(num_reviews) : 0
-  json.image_ids business_images
-  json.review_ids business_reviews
+json.businesses do
+  json.set! @business.id do
+    json.extract! @business, :id, :name, :neighborhood, :street_address, :city, :state,
+    :zip, :latitude, :longitude, :phone, :website, :price
+    json.business_hours hours
+    json.num_reviews num_reviews
+    json.score score ? score.fdiv(num_reviews) : 0
+    json.image_ids business_images
+    json.review_ids business_reviews
+  end
 end
 
 @reviews.each do |review|
