@@ -22,6 +22,8 @@ const msp = (state, ownProps) => {
     image_ids: [],
   }
 
+  console.log(state);
+
   return ({
     business: state.entities.businesses[ownProps.match.params.id] || defaultBusiness,
     images: state.entities.businesses.images,

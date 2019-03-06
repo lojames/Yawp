@@ -1,3 +1,5 @@
+require 'uri'
+
 class Api::BusinessesController < ApplicationController
 
   def show
@@ -13,7 +15,7 @@ class Api::BusinessesController < ApplicationController
     puts "\n\n\n\n"
 
     radius = params[:radius] ? params[:radius] : 5
-    query = "%" + params[:query].downcase + "%"
+    query = "%" + URI.unescape(params[:query]).downcase + "%"
 
     businesses = Business.in_bounds(params[:lat].to_f,params[:lon].to_f,radius).includes(:reviews, :images)
     @businesses = businesses.joins("RIGHT JOIN business_categories on businesses.id = business_categories.business_id")

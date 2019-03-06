@@ -1,0 +1,26 @@
+.results-header{
+  background-color: #f5f5f5;
+  border-color: #e6e6e6;
+  min-width: 1020px;
+}
+
+.results-header-container{
+  padding: 30px 0;
+  width: 960px;
+  margin: auto;
+}
+
+.results-header-textbox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.results-header h1{
+  font-size: 21px;
+  line-height: 27px;
+}
+
+.results-header b{
+  font-weight: 700;
+}
