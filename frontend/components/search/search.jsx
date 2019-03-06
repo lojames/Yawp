@@ -23,13 +23,13 @@ class Search extends React.Component{
     }
   }
 
-  // componentDidUpdate(){
-  //   console.log("SEARCH UPDATE");
-  //   if (this.props.location.search !== this.state.query) {
-  //     this.props.fetchBusinesses(this.props.location.search);
-  //     this.setState({query: this.props.location.search});
-  //   }
-  // }
+  componentDidUpdate(){
+    console.log("SEARCH UPDATE");
+    if (this.props.location.search !== this.state.query) {
+      this.props.fetchBusinesses(this.props.location.search);
+      this.setState({query: this.props.location.search});
+    }
+  }
 
   render(){
     console.log("SEARCH RENDER");

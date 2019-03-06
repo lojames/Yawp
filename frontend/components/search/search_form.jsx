@@ -9,8 +9,8 @@ class SearchForm extends React.Component{
     console.log("SF PROPS");
     super(props);
     const queryStr = this.props.location.search.split("&lat=")[0].split("?query=")[1]
-    const nearDefaultText = (this.props.location.pathname !== '/' && queryStr) ? decodeURIComponent(queryStr[0]) : '';
-    console.log(queryStr);
+    console.log(queryStr + "\n\n\n\n\n\n\n\n\n");
+    const nearDefaultText = (this.props.location.pathname !== '/' && queryStr !== undefined) ? decodeURIComponent(queryStr) : '';
     this.state = {
       query: nearDefaultText,
       lat: "",
@@ -72,7 +72,11 @@ class SearchForm extends React.Component{
     let city, state;
     (suggestion.city) ? city = suggestion.city : city = suggestion.name;
     (suggestion.administrative) ? state = `, ${suggestion.administrative}` : state = "";
-    this.setState({lat: parseFloat(suggestion.latlng.lat), lon: parseFloat(suggestion.latlng.lng)});
+    this.setState({
+      lat: parseFloat(suggestion.latlng.lat),
+      lon: parseFloat(suggestion.latlng.lng),
+      userLocation: `${city}${state}`,
+    });
     setCookie("lat", suggestion.latlng.lat);
     setCookie("lon", suggestion.latlng.lng);
     setCookie("userLocation", `${city}${state}`);

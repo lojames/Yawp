@@ -11,7 +11,7 @@ const SearchHeader = ( {location, businesses} ) => {
   if (businesses){
     const numBusinesses = Object.keys(businesses).length;
     queryStr= location.search.split("&lat=")[0].split("?query=")[1]
-    queryStr = queryStr ? decodeURIComponent(queryStr[0]) : "";
+    queryStr = queryStr !== "" ? decodeURIComponent(queryStr) : "";
     if (numBusinesses < 1) {
       headerText = `No results for ${queryStr}`
     } else {
@@ -20,7 +20,7 @@ const SearchHeader = ( {location, businesses} ) => {
     }
 
     locationStr = location.search.split("&loc=")[1]
-    locationStr = locationStr ? decodeURIComponent(locationStr[0]) : ""
+    locationStr = locationStr !== "" ? decodeURIComponent(locationStr) : ""
     console.log(locationStr);
   }
 

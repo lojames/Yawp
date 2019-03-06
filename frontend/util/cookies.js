@@ -1,7 +1,8 @@
-export const getCookie = (name) => (
-  document.cookie.split(name+"=")[1].split(";")[0]
-)
+export const getCookie = name => {
+    const value = document.cookie ? document.cookie.split(name+"=")[1].split("mznxbcv;")[0]: ""
+    return value.replace("mznxbcv", "");
+}
 
 export const setCookie = (name, value) => {
-  document.cookie = `${name} = ${value}`;
+  document.cookie = `${name} = ${value}mznxbcv`;
 }
