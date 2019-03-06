@@ -8,7 +8,7 @@ class SearchForm extends React.Component{
   constructor(props){
     console.log("SF PROPS");
     super(props);
-    const queryStr = this.props.location.search.split("&lat=")[0].slice(7);
+    const queryStr = this.props.location.search.split("&lat=")[0].split("?query=")[1]
     const nearDefaultText = (this.props.location.pathname !== '/' && queryStr) ? decodeURIComponent(queryStr[0]) : '';
     console.log(queryStr);
     this.state = {
