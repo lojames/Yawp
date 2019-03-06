@@ -10,7 +10,7 @@ const SearchHeader = ( {location, businesses} ) => {
   let locationStr = "";
   if (businesses){
     const numBusinesses = Object.keys(businesses).length;
-    queryStr= location.search.split("&lat=")[0].slice(7)
+    queryStr= location.search.split("&lat=")[0].split("?query=")[1]
     queryStr = queryStr ? decodeURIComponent(queryStr[0]) : "";
     if (numBusinesses < 1) {
       headerText = `No results for ${queryStr}`
