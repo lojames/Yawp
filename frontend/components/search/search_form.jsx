@@ -23,6 +23,9 @@ class SearchForm extends React.Component{
 
   componentDidMount(){
     console.log("SF DID MOUNT");
+    console.log("USERLOCATION: " + getCookie("userLocation"));
+    console.log("LAT: " + getCookie("lat"));
+    console.log(!getCookie("lat"));
     if (!getCookie("lat")){
       setCookie("lat", window.userData.latitude);
       setCookie("lon", window.userData.longitude);
@@ -39,6 +42,8 @@ class SearchForm extends React.Component{
         userLocation: getCookie("userLocation")
       });
     }
+    console.log("USERLOCATION: " + getCookie("userLocation"));
+    console.log("LAT: " + getCookie("lat"));
   }
 
   componentDidUpdate(){
@@ -116,7 +121,7 @@ class SearchForm extends React.Component{
             <span className="field-name">Near</span>
               <AlgoliaPlaces
               placeholder='address, neighborhood, city, state or zip'
-              defaultValue={getCookie("userLocation")}
+              defaultValue={ console.log(getCookie("userLocation")) }
               onFocus = { this.highlightText(1) }
               id='search-bar-input-1'
               options={{
