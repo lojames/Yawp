@@ -32,7 +32,6 @@ class SearchForm extends React.Component{
       userLocation: userLocationValue,
     };
 
-    this.initializeCookies = this.initializeCookies.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFindChange = this.handleFindChange.bind(this);
   }
