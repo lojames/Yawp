@@ -6,51 +6,36 @@ import { getCookie, setCookie } from '../../util/cookies';
 class SearchForm extends React.Component{
 
   constructor(props){
-    console.log("SF PROPS");
+    console.log("SF CONSTRUCTOR");
     super(props);
     const queryStr = this.props.location.search.split("&lat=")[0].split("?query=")[1];
     const nearDefaultText = (this.props.location.pathname !== '/' && queryStr !== undefined) ? decodeURIComponent(queryStr) : '';
-    this.state = {
-      query: nearDefaultText,
-      lat: "",
-      lon: "",
-      userLocation: "",
-    };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleFindChange = this.handleFindChange.bind(this);
-  }
-
-  componentDidMount(){
-    console.log("SF DID MOUNT");
-    console.log("USERLOCATION: " + getCookie("userLocation"));
-    console.log("LAT: " + getCookie("lat"));
-    console.log(!getCookie("lat"));
+    let latValue, lonValue, userLocationValue;
     if (!getCookie("lat")){
       setCookie("lat", window.userData.latitude);
       setCookie("lon", window.userData.longitude);
       setCookie("userLocation", `${window.userData.city}, ${window.userData.region_name}`);
-      this.setState({
-        lat: window.userData.latitude,
-        lon: window.userData.longitude,
-        userLocation: getCookie("userLocation"),
-      });
+      latValue = window.userData.latitude;
+      lonValue = window.userData.longitude;
+      userLocationValue = `${window.userData.city}, ${window.userData.region_name}`;
     } else {
-      this.setState({
-        lat: parseFloat(getCookie("lat")),
-        lon: parseFloat(getCookie("lon")),
-        userLocation: getCookie("userLocation")
-      });
+      latValue = parseFloat(getCookie("lat"));
+      lonValue = parseFloat(getCookie("lon"));
+      userLocationValue = getCookie("userLocation");
     }
-    console.log("USERLOCATION: " + getCookie("userLocation"));
-    console.log("LAT: " + getCookie("lat"));
-  }
 
-  componentDidUpdate(){
-    console.log("SF DID UPDATE");
-    console.log(this.props);
-  }
+    this.state = {
+      query: nearDefaultText,
+      lat: latValue,
+      lon: lonValue,
+      userLocation: userLocationValue,
+    };
 
+    this.initializeCookies = this.initializeCookies.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFindChange = this.handleFindChange.bind(this);
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -95,8 +80,9 @@ class SearchForm extends React.Component{
 
   render(){
     console.log("SF RENDER");
+    console.log( getCookie("userLocation") )
     console.log(this.props);
-    console.log(this.props);
+    console.log("STATE: " + this.state.userLocation);
 
     return (
       <form className="search-bar" onSubmit={this.handleSubmit} autoComplete="off">
@@ -121,7 +107,7 @@ class SearchForm extends React.Component{
             <span className="field-name">Near</span>
               <AlgoliaPlaces
               placeholder='address, neighborhood, city, state or zip'
-              defaultValue={ console.log(getCookie("userLocation")) }
+              defaultValue={ this.state.userLocation }
               onFocus = { this.highlightText(1) }
               id='search-bar-input-1'
               options={{
