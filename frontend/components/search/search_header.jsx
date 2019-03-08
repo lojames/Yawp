@@ -2,8 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 const SearchHeader = ( {location, businesses} ) => {
-  console.log(businesses);
-  console.log("In Search Header");
   let headerText = "";
   let showingStr = "";
   let queryStr = "";
@@ -21,7 +19,6 @@ const SearchHeader = ( {location, businesses} ) => {
 
     locationStr = location.search.split("&filters=")[0].split("&loc=")[1]
     locationStr = locationStr !== "" ? decodeURIComponent(locationStr) : ""
-    console.log(locationStr);
   }
 
   return (

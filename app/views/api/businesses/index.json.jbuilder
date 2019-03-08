@@ -3,7 +3,7 @@ json.businesses do
     num_reviews = business.reviews.length
     score = business.reviews.map {|review| review.score}.reduce(:+)
     json.set! business.id do
-      json.extract! business, :id, :name, :phone, :street_address, :neighborhood
+      json.extract! business, :id, :name, :phone, :street_address, :neighborhood, :latitude, :longitude
       json.num_reviews  num_reviews
       json.score score ? score.fdiv(num_reviews) : 0
       json.review_ids business.reviews.first ? [business.reviews.first.id] : []

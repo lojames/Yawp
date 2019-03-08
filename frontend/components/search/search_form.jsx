@@ -6,7 +6,6 @@ import { getCookie, setCookie } from '../../util/cookies';
 class SearchForm extends React.Component{
 
   constructor(props){
-    console.log("SF CONSTRUCTOR");
     super(props);
 
     const queryStr = this.props.location.search.split("&lat=")[0].split("?query=")[1];
@@ -78,7 +77,7 @@ class SearchForm extends React.Component{
     setCookie("lat", suggestion.latlng.lat);
     setCookie("lon", suggestion.latlng.lng);
     setCookie("userLocation", `${city}${state}`);
-    document.getElementById('search-bar-input-1').value = userLocation;
+    document.getElementById('search-bar-input-1').value = this.state.userLocation;
   }
 
   highlightText(id) {
@@ -89,11 +88,6 @@ class SearchForm extends React.Component{
   }
 
   render(){
-    console.log("SF RENDER");
-    console.log( getCookie("userLocation") )
-    console.log(this.props);
-    console.log("STATE: " + this.state.userLocation);
-
     return (
       <form className="search-bar" onSubmit={this.handleSubmit} autoComplete="off">
         <div className="search-find-bar">

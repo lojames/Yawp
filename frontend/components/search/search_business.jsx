@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { starsStr, imageOffset } from '../../util/stars'
 
 const SearchBusiness = ({ business, reviews, images, location, id, idx }) => {
-  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-  console.log(location.search);
   let review = reviews[business.review_ids[0]] ? `"${reviews[business.review_ids[0]].body}"` : "";
   let readMoreFlag = "hidden";
   const image = images[business.image_ids[0]] ? images[business.image_ids[0]].image_url : "/business_large_square.png";

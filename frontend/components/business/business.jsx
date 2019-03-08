@@ -20,8 +20,6 @@ class Business extends React.Component{
 
 
   render(){
-    console.log("!!!!!!!!!!!!!!!!!!!!!!!BUSINESS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    console.log(this.props);
     return (
       <>
         <GeneralHeader />

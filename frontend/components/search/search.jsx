@@ -9,13 +9,11 @@ import BusinessesMap from './businesses_map'
 class Search extends React.Component{
 
   constructor(props){
-    console.log("SEARCH CONSTRUCTOR");
     super(props);
     this.state = {query: ""};
   }
 
   componentDidMount(){
-    console.log("SEARCH DID MOUNT");
     if ( this.props.location.search !== this.state.query ) {
       this.props.fetchBusinesses(this.props.location.search);
       this.setState({query: this.props.location.search});
@@ -23,7 +21,6 @@ class Search extends React.Component{
   }
 
   componentDidUpdate(prevProps){
-    console.log("SEARCH UPDATE!");
     if (JSON.stringify(this.props.businesses)!==JSON.stringify(prevProps.businesses)
       || this.props.location.search !== this.state.query ) {
       this.props.fetchBusinesses(this.props.location.search);
@@ -32,7 +29,6 @@ class Search extends React.Component{
   }
 
   render(){
-    console.log("SEARCH RENDER");
     return (
       <>
         <GeneralHeader />
@@ -45,7 +41,7 @@ class Search extends React.Component{
             </div>
 
             <div className="right-panel">
-              <BusinessesMap />
+              <BusinessesMap location={this.props.location} businesses={this.props.businesses}/>
             </div>
           </div>
         </div>

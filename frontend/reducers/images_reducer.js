@@ -2,7 +2,7 @@ import { RECEIVE_BUSINESS, RECEIVE_BUSINESSES } from '../actions/business_action
 import merge from 'lodash/merge';
 
 const imagesReducer = (state = {}, action) => {
-  console.log(action.images);
+  (action.images);
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_BUSINESSES:
