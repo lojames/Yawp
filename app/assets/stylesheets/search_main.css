@@ -1,4 +1,82 @@
 .main-search-container{
   width: 960px;
   margin: auto;
+  padding: 18px 0;
+  display: flex;
+  color: #333;
+  line-height: 18px;
+}
+
+.main-search-container .left-panel{
+  width: 68.75%;
+  margin-right: 30px;
+}
+
+.main-search-container .right-panel{
+  width: 31.25%;
+}
+
+.search-businesses > li{
+  padding: 18px 0;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-list-business-info{
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-list-business-image-wrapper{
+  width: 228px;
+}
+
+.search-list-business-image-wrapper img{
+  width: 210px;
+  height: 210px;
+  border-radius: 4px;
+}
+
+.search-list-business-info-wrapper{
+  width: 402px;
+}
+
+.search-list-business-review{
+  margin: 18px 0;
+}
+.search-list-business-review p{
+  white-space: pre-line;
+}
+
+.content-wrapper{
+  min-width: 1020px;
+}
+
+.main-search-container a{
+  color: #0073bb;
+}
+
+.search-list-business-text {
+  margin-top: 5px;
+}
+
+.search-list-business-info-left .review-stars-18{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.search-list-business-info-left {
+  width: 62.5%;
+}
+
+.search-list-business-info-right{
+  text-align: right;
+  width: 37.5%;
+}
+
+.search-list-business-info h1{
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
 }

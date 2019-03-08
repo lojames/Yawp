@@ -33,13 +33,15 @@ class Business extends React.Component{
           </div>
         </div>
 
-        <div className="main-business-container">
-          <div className="left-panel">
-            <BusinessReviewsContainer business={this.props.business} reviews={this.props.reviews}/>
-          </div>
+        <div className="content-wrapper">
+          <div className="main-business-container">
+            <div className="left-panel">
+              <BusinessReviewsContainer business={this.props.business} reviews={this.props.reviews}/>
+            </div>
 
-          <div className="right-panel">
-            <BusinessHoursContainer businessHours={this.props.business.business_hours}/>
+            <div className="right-panel">
+              <BusinessHoursContainer businessHours={this.props.business.business_hours}/>
+            </div>
           </div>
         </div>
 

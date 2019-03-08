@@ -24,11 +24,56 @@ const Footer = () => {
             Cities
           </div>
           <ul className="footer-main-content">
-            <li><Link to="/">New York</Link></li>
-            <li><Link to="/">Los Angelos</Link></li>
-            <li><Link to="/">Chicago</Link></li>
-            <li><Link to="/">Houston</Link></li>
-            <li><Link to="/">Phoenix</Link></li>
+            <li>
+              <Link
+                to={{
+                  pathname: `/search`,
+                  search: '?query=&lat=40.7309&lon=-73.9872&loc=New%20York'
+                }}
+                onClick={() => window.location.reload()}
+                >New York
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={{
+                  pathname: `/search`,
+                  search: '?query=&lat=34.0537&lon=-118.243&loc=Los%20Angeles%2C%20California'
+                }}
+                onClick={() => window.location.reload()}
+                >Los Angeles
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={{
+                  pathname: `/search`,
+                  search: '?query=&lat=41.8756&lon=-87.6244&loc=Chicago%2C%20Illinois'
+                }}
+                onClick={() => window.location.reload()}
+                >Chicago
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={{
+                  pathname: `/search`,
+                  search: '?query=&lat=29.7589&lon=-95.3677&loc=Houston%2C%20Texas'
+                }}
+                onClick={() => window.location.reload()}
+                >Houston
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={{
+                  pathname: `/search`,
+                  search: '?query=&lat=33.4486&lon=-112.077&loc=Phoenix%2C%20Arizona'
+                }}
+                onClick={() => window.location.reload()}
+                >Phoenix
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -36,11 +81,56 @@ const Footer = () => {
           <div className="footer-main-header" style={{height:"18px"}}>
           </div>
           <ul className="footer-main-content">
-            <li><Link to="/">Philadelphia</Link></li>
-            <li><Link to="/">San Antonio</Link></li>
-            <li><Link to="/">San Diego</Link></li>
-            <li><Link to="/">Dallas</Link></li>
-            <li><Link to="/">San Hose</Link></li>
+            <li>
+              <Link
+                to={{
+                  pathname: `/search`,
+                  search: '?query=&lat=39.9524&lon=-75.1636&loc=Philadelphia%2C%20Pennsylvania'
+                }}
+                onClick={() => window.location.reload()}
+                >Philadelphia
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={{
+                  pathname: `/search`,
+                  search: '?query=&lat=29.4246&lon=-98.4951&loc=San%20Antonio%2C%20Texas'
+                }}
+                onClick={() => window.location.reload()}
+                >San Antonio
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={{
+                  pathname: `/search`,
+                  search: '?query=&lat=32.7174&lon=-117.163&loc=San%20Diego%2C%20California'
+                }}
+                onClick={() => window.location.reload()}
+                >San Diego
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={{
+                  pathname: `/search`,
+                  search: '?query=&lat=32.7763&lon=-96.7969&loc=Dallas%2C%20Texas&filters='
+                }}
+                onClick={() => window.location.reload()}
+                >Dallas
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={{
+                  pathname: `/search`,
+                  search: '?query=&lat=37.3362&lon=-121.891&loc=San%20José%2C%20California'
+                }}
+                onClick={() => window.location.reload()}
+                >San Hose
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -49,10 +139,10 @@ const Footer = () => {
             About the Dev
           </div>
           <ul className="footer-main-content">
-            <li><a href="/">About Me</a></li>
+            <li><a href="https://lojames.github.io/">About Me</a></li>
             <li><a href="https://github.com/lojames">Github</a></li>
             <li><a href="http://linkedin.com/in/james-lo-254a48b6">LinkedIn</a></li>
-            <li><a href="/">Contact</a></li>
+            <li><a href="mailto:lo.jamess@gmail.com">Contact</a></li>
           </ul>
         </div>
       </div>

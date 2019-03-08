@@ -22,7 +22,7 @@ const searchBusinesses = (props) => {
 
 const SearchBusinessesContainer = (props) => {
   return (
-    <ul className="search-businesses-list">
+    <ul className="search-businesses">
       {searchBusinesses(props)}
     </ul>
   );

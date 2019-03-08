@@ -19,7 +19,7 @@ const SearchHeader = ( {location, businesses} ) => {
       showingStr = `Showing 1-${numBusinesses} of ${numBusinesses}`
     }
 
-    locationStr = location.search.split("&loc=")[1]
+    locationStr = location.search.split("&filters=")[0].split("&loc=")[1]
     locationStr = locationStr !== "" ? decodeURIComponent(locationStr) : ""
     console.log(locationStr);
   }

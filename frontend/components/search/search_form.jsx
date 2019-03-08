@@ -8,17 +8,27 @@ class SearchForm extends React.Component{
   constructor(props){
     console.log("SF CONSTRUCTOR");
     super(props);
+
     const queryStr = this.props.location.search.split("&lat=")[0].split("?query=")[1];
     const nearDefaultText = (this.props.location.pathname !== '/' && queryStr !== undefined) ? decodeURIComponent(queryStr) : '';
 
+    const locStr = this.props.location.search.split("&filters=")[0].split("&loc=")[1];
+    if (this.props.location.pathname !== '/' && locStr !== undefined && locStr.length > 0){
+      const latStr = this.props.location.search.split("&lon=")[0].split("&lat=")[1];
+      const lonStr = this.props.location.search.split("&loc=")[0].split("&lon=")[1];
+      setCookie("lat",decodeURIComponent(latStr));
+      setCookie("lon", decodeURIComponent(lonStr));
+      setCookie("userLocation", decodeURIComponent(locStr));
+    }
+
     let latValue, lonValue, userLocationValue;
     if (!getCookie("lat")){
-      setCookie("lat", window.userData.latitude);
-      setCookie("lon", window.userData.longitude);
-      setCookie("userLocation", `${window.userData.city}, ${window.userData.region_name}`);
       latValue = window.userData.latitude;
       lonValue = window.userData.longitude;
       userLocationValue = `${window.userData.city}, ${window.userData.region_name}`;
+      setCookie("lat", latValue);
+      setCookie("lon", lonValue);
+      setCookie("userLocation", userLocationValue);
     } else {
       latValue = parseFloat(getCookie("lat"));
       lonValue = parseFloat(getCookie("lon"));
@@ -40,7 +50,7 @@ class SearchForm extends React.Component{
     e.preventDefault();
     const historyOptions = {
       pathname: '/search',
-      search: `?query=${encodeURIComponent(this.state.query)}&lat=${encodeURIComponent(this.state.lat)}&lon=${encodeURIComponent(this.state.lon)}&loc=${encodeURIComponent(this.state.userLocation)}`,
+      search: `?query=${encodeURIComponent(this.state.query)}&lat=${encodeURIComponent(this.state.lat)}&lon=${encodeURIComponent(this.state.lon)}&loc=${encodeURIComponent(this.state.userLocation)}&filters=`,
       state: this.state
     };
 
@@ -68,6 +78,7 @@ class SearchForm extends React.Component{
     setCookie("lat", suggestion.latlng.lat);
     setCookie("lon", suggestion.latlng.lng);
     setCookie("userLocation", `${city}${state}`);
+    document.getElementById('search-bar-input-1').value = userLocation;
   }
 
   highlightText(id) {

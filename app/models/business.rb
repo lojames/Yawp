@@ -9,6 +9,8 @@ class Business < ApplicationRecord
   has_many :images
   has_many :business_categories
   has_many :categories, through: :business_categories
+  has_many :reviewers, through: :reviews, source: :user
+  has_many :imagers, through: :images, source: :images
 
   def self.geocode(street_address, city, state, zip)
     access_key = Rails.application.credentials.texas_am_geoservices[:api_key]

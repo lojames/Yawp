@@ -4,9 +4,14 @@ class Api::BusinessesController < ApplicationController
 
   def show
     @business = Business.find(params[:id])
-    @reviews = @business.reviews.includes(:user, :images)
-    @images = @business.images.includes(:user)
-    render :show
+    if @business
+      @reviews = @business.reviews.includes(:user, :images)
+      @images = @business.images.includes(:user)
+      render :show
+    else
+      puts @business.errors
+      render json: @business.errors.full_messages, status: 404
+    end
   end
 
   def index
