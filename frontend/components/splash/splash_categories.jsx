@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as Icons from "../../util/icons"
-import { getCookie, setCookie } from '../../util/cookies';
+import { getUserLocation } from '../../util/search_util';
 
 const showHideDiv = () => {
   const text = document.getElementById("render-text");
@@ -16,9 +16,10 @@ const showHideDiv = () => {
 };
 
 const SplashCategories = () => {
-  const lat = getCookie("lat");
-  const lon = getCookie("lon");
-  const userLocation = getCookie("userLocation");
+  const userLocationObj = getUserLocation();
+  const lat = userLocationObj.lat
+  const lon = userLocationObj.lon
+  const userLocation = userLocationObj.loc
 
   return (
     <div className='splash-business-categories'>

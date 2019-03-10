@@ -28,9 +28,8 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=40.7309&lon=-73.9872&loc=New%20York'
+                  search: '?query=&lat=40.7309&lon=-73.9872&loc=New%20York&filters=l'
                 }}
-                onClick={() => window.location.reload()}
                 >New York
               </Link>
             </li>
@@ -38,9 +37,8 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=34.0537&lon=-118.243&loc=Los%20Angeles%2C%20California'
+                  search: '?query=&lat=34.0537&lon=-118.243&loc=Los%20Angeles%2C%20California&filters=l'
                 }}
-                onClick={() => window.location.reload()}
                 >Los Angeles
               </Link>
             </li>
@@ -48,9 +46,8 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=41.8756&lon=-87.6244&loc=Chicago%2C%20Illinois'
+                  search: '?query=&lat=41.8756&lon=-87.6244&loc=Chicago%2C%20Illinois&filters=l'
                 }}
-                onClick={() => window.location.reload()}
                 >Chicago
               </Link>
             </li>
@@ -58,9 +55,8 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=29.7589&lon=-95.3677&loc=Houston%2C%20Texas'
+                  search: '?query=&lat=29.7589&lon=-95.3677&loc=Houston%2C%20Texas&filters=l'
                 }}
-                onClick={() => window.location.reload()}
                 >Houston
               </Link>
             </li>
@@ -68,9 +64,8 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=33.4486&lon=-112.077&loc=Phoenix%2C%20Arizona'
+                  search: '?query=&lat=33.4486&lon=-112.077&loc=Phoenix%2C%20Arizona&filters=l'
                 }}
-                onClick={() => window.location.reload()}
                 >Phoenix
               </Link>
             </li>
@@ -85,9 +80,8 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=39.9524&lon=-75.1636&loc=Philadelphia%2C%20Pennsylvania'
+                  search: '?query=&lat=39.9524&lon=-75.1636&loc=Philadelphia%2C%20Pennsylvania&filters=l'
                 }}
-                onClick={() => window.location.reload()}
                 >Philadelphia
               </Link>
             </li>
@@ -95,9 +89,8 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=29.4246&lon=-98.4951&loc=San%20Antonio%2C%20Texas'
+                  search: '?query=&lat=29.4246&lon=-98.4951&loc=San%20Antonio%2C%20Texas&filters=l'
                 }}
-                onClick={() => window.location.reload()}
                 >San Antonio
               </Link>
             </li>
@@ -105,9 +98,8 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=32.7174&lon=-117.163&loc=San%20Diego%2C%20California'
+                  search: '?query=&lat=32.7174&lon=-117.163&loc=San%20Diego%2C%20California&filters=l'
                 }}
-                onClick={() => window.location.reload()}
                 >San Diego
               </Link>
             </li>
@@ -115,9 +107,8 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=32.7763&lon=-96.7969&loc=Dallas%2C%20Texas&filters='
+                  search: '?query=&lat=32.7763&lon=-96.7969&loc=Dallas%2C%20Texas&filters=&filters=l'
                 }}
-                onClick={() => window.location.reload()}
                 >Dallas
               </Link>
             </li>
@@ -125,9 +116,8 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=37.3362&lon=-121.891&loc=San%20José%2C%20California'
+                  search: '?query=&lat=37.3362&lon=-121.891&loc=San%20José%2C%20California&filters=l'
                 }}
-                onClick={() => window.location.reload()}
                 >San Hose
               </Link>
             </li>

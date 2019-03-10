@@ -11,7 +11,7 @@ const SearchHeader = ( {location, businesses} ) => {
     queryStr= location.search.split("&lat=")[0].split("?query=")[1]
     queryStr = queryStr !== "" ? decodeURIComponent(queryStr) : "";
     if (numBusinesses < 1) {
-      headerText = `No results for ${queryStr}`
+      headerText = queryStr === "" ? 'No businesses' : `No results for ${queryStr}`;
     } else {
       headerText = queryStr === "" ? "Browsing Businesses" : `Best ${queryStr}`
       showingStr = `Showing 1-${numBusinesses} of ${numBusinesses}`

@@ -5,26 +5,69 @@ import { withRouter } from 'react-router-dom';
 import SearchHeader from './search_header'
 import SearchBusinessesContainer from './search_businesses_container';
 import BusinessesMap from './businesses_map'
+import { parseSearchString, isValidSearchString, getUserLocation, convertToHistoryOptions, getSearchFromURL } from '../../util/search_util'
+import { setCookie } from '../../util/cookies';
 
 class Search extends React.Component{
 
   constructor(props){
     super(props);
-    this.state = {query: ""};
+    this.searchParams = {search: "", query: "", lat: "", lon: "", loc: "", filters: ""};
   }
 
-  componentDidMount(){
-    if ( this.props.location.search !== this.state.query ) {
+  componentWillMount(){
+    this.setSearchParams();
+    if ( this.props.location.search !== this.searchParams.search ) {
       this.props.fetchBusinesses(this.props.location.search);
-      this.setState({query: this.props.location.search});
+      this.searchParams.search = this.props.location.search;
     }
   }
 
+
   componentDidUpdate(prevProps){
-    if (JSON.stringify(this.props.businesses)!==JSON.stringify(prevProps.businesses)
-      || this.props.location.search !== this.state.query ) {
+    this.setSearchParams();
+    console.log(this.props.location.search);
+    console.log(this.searchParams.search);
+    if (this.props.location.search !== this.searchParams.search ) {
       this.props.fetchBusinesses(this.props.location.search);
-      this.setState({query: this.props.location.search});
+      this.searchParams.search = this.props.location.search;
+    }
+  }
+
+  setSearchParams(){
+    if ( isValidSearchString(this.props.location.search) ){
+      const searchParams = parseSearchString(this.props.location.search);
+      searchParams.query ? this.searchParams.query = searchParams.query :  this.searchParams.query = "";
+
+      //VALIDATION FOR LOCATION THROUGH ALGOLIA/GOOGLE PLACES API GOES HERE LATER
+      if (searchParams.loc){
+        this.searchParams.lat = searchParams.lat;
+        this.searchParams.lon = searchParams.lon;
+        this.searchParams.loc = searchParams.loc;
+        setCookie("lat",searchParams.lat);
+        setCookie("lon", searchParams.lon);
+        setCookie("loc", searchParams.loc);
+      } else {
+        const userLocationObj = getUserLocation();
+        this.searchParams.lat = userLocationObj.lat;
+        this.searchParams.lon = userLocationObj.lon;
+        this.searchParams.loc = userLocationObj.loc;
+      }
+
+      //VALIDATION FOR FILTERS GOES HERE
+      searchParams.filters ? this.searchParams.filters = searchParams.filters :  this.searchParams.filters = "";
+
+    } else {
+      const userLocationObj = getUserLocation();
+      const searchParams = parseSearchString(this.props.location.search);
+
+      searchParams.query ? this.searchParams.query = searchParams.query :  this.searchParams.query = "";
+      this.searchParams.lat = userLocationObj.lat;
+      this.searchParams.lon = userLocationObj.lon;
+      this.searchParams.loc = userLocationObj.loc;
+      this.searchParams.filters = "";
+      const historyOptions = convertToHistoryOptions(this.searchParams);
+      this.props.history.replace(historyOptions);
     }
   }
 
