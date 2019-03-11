@@ -26,8 +26,6 @@ class Search extends React.Component{
 
   componentDidUpdate(prevProps){
     this.setSearchParams();
-    console.log(this.props.location.search);
-    console.log(this.searchParams.search);
     if (this.props.location.search !== this.searchParams.search ) {
       this.props.fetchBusinesses(this.props.location.search);
       this.searchParams.search = this.props.location.search;

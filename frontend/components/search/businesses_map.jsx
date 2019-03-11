@@ -1,6 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 
+const iconSymbol = (fillColor, strokeColor) => {
+  return {
+    path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z',
+    fillColor: fillColor,
+    fillOpacity: 1,
+    strokeColor: strokeColor,
+    strokeWeight: 1,
+    scale: 1,
+  }
+}
+
 class BusinessesMap extends React.Component{
 
   componentDidUpdate(){
@@ -24,15 +35,41 @@ class BusinessesMap extends React.Component{
       const marker = new google.maps.Marker({
         position: { lat: parseFloat(business.latitude), lng: parseFloat(business.longitude) },
         map: this.map,
-        title: business.name,
-        label: {text: (idx+1).toString(), color: "white"}
+        url: `#/biz/${business.id}`,
+        label: {text: (idx+1).toString(), color: "white", fontFamily: 'helvetica'},
       })
+
+      const infoWindow = new google.maps.InfoWindow({
+        content: `${business.name}`
+      });
+
+      google.maps.event.addListener(marker, 'mouseover', () => {
+        marker.setIcon(iconSymbol('white','red'));
+        marker.setLabel();
+        marker.setZIndex(marker.zIndex+50);
+        infoWindow.open(this.map, marker);
+      });
+
+      google.maps.event.addListener(marker, 'mouseout', () => {
+        marker.setIcon();
+        marker.setLabel({text: (idx+1).toString(), color: "white", fontFamily: 'helvetica'});
+        marker.setZIndex(marker.zIndex-50);
+        infoWindow.close();
+      });
+
+      google.maps.event.addListener(marker, 'click', () => {
+        window.location.href = marker.url;
+      });
     });
+
   }
 
   render(){
+    console.log("HI");
     return (
-      <div id='search-map-container' ref={map => this.mapNode = map}>
+      <div className='search-map-container'>
+        <div id='search-map' ref={map => this.mapNode = map}>
+        </div>
       </div>
     )
   }

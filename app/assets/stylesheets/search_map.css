@@ -1,4 +1,10 @@
-#search-map-container{
+#search-map{
   height: 300px;
   width: 300px;
+}
+
+.search-map-container{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 18px;
 }
