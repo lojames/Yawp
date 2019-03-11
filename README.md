@@ -66,7 +66,7 @@ haversine_average_time/vincenty_average_time
 puts "Vincenty Average Time: #{vincenty_average_time} ms"
 puts "Haversine Average Time: #{haversine_average_time} ms" 
 puts "Num Trials: #{num_trials}"
-puts "On average, Vincenty takes #{vincenty_average_time/haversine_average_time} times longers to run."
+puts "On average, Vincenty takes #{vincenty_average_time/haversine_average_time} times longer to run."
 ```
 
 Yawp currently uses the spherical trigonometric approach where the largest miles per longitude is assumed 68.703 while fixing miles per latitude at 69, however, a future version of Yawp will utilize Vincenty's formula for it's accuracy.
