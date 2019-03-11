@@ -35,7 +35,7 @@ Keywords is a string of comma-space delimited word forms of the key of a Busines
 
 Due to the nature of significantly varying miles per longitude depending on latitude, both the Haversine (spherical trigonometry) and Vincenty formulas were investigated for miles per longitude conversion.  The Haversine approach assumes the Earth is a sphere while the Vincenty approach considers Earth's ellipsoidal shape.  Ultimately there is a execution time vs accuracy trade off where Haversine is faster and Vincenty is more accurate.
 
-For testing, each trial consisted of generating random coordinates from somewhere in the United states, determining the execution time of each approach, and computing the percent difference in the values. Since latitude is fixed, the Haversine was reduced to a simple spherical trigonometric conversion.  The Vincenty implementation was not reduced (which could significantly cut down on execution time). 
+For testing, each trial consisted of generating random coordinates from somewhere in the United states, determining the execution time of each approach, and computing the percent difference in the values. Since latitude is fixed, the Haversine was reduced to a simple spherical trigonometric conversion.  The Vincenty implementation is an almost line by line coversion to Ruby of [this Javascript implementation](https://www.movable-type.co.uk/scripts/latlong-vincenty.html) of Vincenty's algorithm and was not reduced (which could significantly cut down on execution time). 
 
 The average percent difference was consistently less than 1 percent at .813%. The Vincenty approach took an average of anywhere between 6 to 23 times longer with each average consisting of 100000 trials. While the difference in execution time may seem significant, the execution time of Vincenty's algorithm is still a small fraction of a millisecond.  The code for the testing simulation follows.
 
@@ -73,4 +73,4 @@ puts "Num Trials: #{num_trials}"
 puts "On average, Vincenty takes #{vincenty_average_time/haversine_average_time} times longers to run."
 ```
 
-Yawp currently uses the spherical trigonometric approach where the largest miles per longitude is assumed 68.703 while fixing miles per latitude at 69, however, a future version of Yawp will utilize Vincenty's formula for it's accuracy.
+Yawp currently uses the spherical trigonometric approach where the largest miles per longitude is assumed 68.703 while fixing miles per latitude at 69, however, a future version of Yawp will either utilize a reduced Vincenty's approach with fixed latitude or do both latitude and logitude conversions.
