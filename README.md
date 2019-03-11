@@ -33,14 +33,17 @@ Keywords is a string of comma-space delimited word forms of the key of a Busines
 
 # On the Discrepencies in Miles per Longitude at Different Latitudes
 
-Due to the nature of significantly varying miles per longitude depending on latitude, both the Haversine (spherical trigonometry) and Vincenty forumulas were investigated for miles per longitude conversion.  Since latitude is fixed, the Haversine was reduced to a simple spherical trigonometric conversion.  Due to the complexity of Vincenty's formula, the Vincenty implementation was not reduced (which could significantly cut down on execution time).
+Due to the nature of significantly varying miles per longitude depending on latitude, both the Haversine (spherical trigonometry) and Vincenty formulas were investigated for miles per longitude conversion.  The Haversine approach assumes the Earth is a sphere while the Vincenty approach considers Earth's ellipsoidal shape.  Ultimately there is a execution time vs accuracy trade off where Haversine is faster and Vincenty is more accurate.
 
-For testing, each trial consisted of generating random coordinates from somewhere in the United states and getting the execution time of each approach. The Vincenty approach took an average of anywhere between 6 to 23 times longer with each average consisting of 100000 trials. While the difference in execution time maay seem significant, the execution time of Vincenty's algorithm is still a small fraction of a millisecond.  The code for the testing simulation follows.
+For testing, each trial consisted of generating random coordinates from somewhere in the United states, determining the execution time of each approach, and computing the percent difference in the values. Since latitude is fixed, the Haversine was reduced to a simple spherical trigonometric conversion.  The Vincenty implementation was not reduced (which could significantly cut down on execution time). 
+
+The average percent difference was consistently less than 1 percent at .813%. The Vincenty approach took an average of anywhere between 6 to 23 times longer with each average consisting of 100000 trials. While the difference in execution time may seem significant, the execution time of Vincenty's algorithm is still a small fraction of a millisecond.  The code for the testing simulation follows.
 
 ```
 num_trials = 100000
 vincenty_total_time = 0
 haversine_total_time = 0
+percent_difference_total = 0
 (0...num_trials).each do |i|
   lat1 = 32.518000
   lat2 = 47.315658
@@ -49,24 +52,25 @@ haversine_total_time = 0
   x = random(lat1, lat2)
   y = random(lon1, lon2)
   t1 = Time.now
-  vincety([x, y], [x,y+1])/1609.344
+  v = vincety([x, y], [x,y+1])/1609.344
   t2 = Time.now
   vincenty_total_time += (t2-t1)
 
   t1 = Time.now
-  haversine(x)
+  h = haversine(x)
   t2 = Time.now
   haversine_total_time += (t2-t1)
+  percent_difference_total += ((v - h) / v)
 end
 vincenty_average_time = vincenty_total_time/num_trials*1000
 haversine_average_time = haversine_total_time/num_trials*1000
+percent_difference_average = percent_difference_total/num_trials
 
-haversine_average_time/vincenty_average_time
-
+puts "Percent Difference Average: #{percent_difference_average}"
 puts "Vincenty Average Time: #{vincenty_average_time} ms"
 puts "Haversine Average Time: #{haversine_average_time} ms" 
 puts "Num Trials: #{num_trials}"
-puts "On average, Vincenty takes #{vincenty_average_time/haversine_average_time} times longer to run."
+puts "On average, Vincenty takes #{vincenty_average_time/haversine_average_time} times longers to run."
 ```
 
 Yawp currently uses the spherical trigonometric approach where the largest miles per longitude is assumed 68.703 while fixing miles per latitude at 69, however, a future version of Yawp will utilize Vincenty's formula for it's accuracy.
