@@ -7,18 +7,19 @@
 .ap-input, .ap-hint {
   padding-right: 0;
   padding-left: 0;
-  height: auto;
   border: none;
   position: fixed;
 }
 
 .general-header .ap-input{
   font-size: 14px;
+  height: 20px;
 }
 
 .splash-container-main .ap-input{
   font-size: 18px;
   font-weight: 400;
+  height: auto;
 }
 
 /* The style of the svg icons when the input is on hover */
