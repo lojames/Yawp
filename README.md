@@ -35,7 +35,7 @@ Keywords is a string of comma-space delimited word forms of the key of a Busines
 
 Due to the nature of significantly varying miles per longitude depending on latitude, both the Haversine (spherical trigonometry) and Vincenty forumulas were investigated for miles per longitude conversion.  Since latitude is fixed, the Haversine was reduced to a simple spherical trigonometric conversion.  Due to the complexity of Vincenty's formula, the Vincenty implementation was not reduced (which could significantly cut down on execution time).
 
-For testing, each trial consisted of generating random coordinates from somewhere in the United states and getting the execution time of each approach. The Vincenty approach took an averge of anywhere from 6 to 23 times longer with each average consisting of 100000 trials. While this may seem significant, the execution time of Vincenty's algorithm is still a small fraction of a millisecond.  The code for the testing simulation follows.
+For testing, each trial consisted of generating random coordinates from somewhere in the United states and getting the execution time of each approach. The Vincenty approach took an average of anywhere between 6 to 23 times longer with each average consisting of 100000 trials. While the difference in execution time maay seem significant, the execution time of Vincenty's algorithm is still a small fraction of a millisecond.  The code for the testing simulation follows.
 
 ```
 num_trials = 100000
@@ -69,4 +69,4 @@ puts "Num Trials: #{num_trials}"
 puts "On average, Vincenty takes #{vincenty_average_time/haversine_average_time} times longers to run."
 ```
 
-Yawp currently uses the spherical trigonometric approach where the largest miles per longitude is assumed 68.703 while fixing miles per latitude at 69, however, a future version of Yawp will utilize Vincenty's formula.
+Yawp currently uses the spherical trigonometric approach where the largest miles per longitude is assumed 68.703 while fixing miles per latitude at 69, however, a future version of Yawp will utilize Vincenty's formula for it's accuracy.
