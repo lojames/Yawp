@@ -4,7 +4,7 @@ Yawp is a location based, searchable business directory with crowdsourced review
 
 # Location
 
-Yawp store's a user's location as latitude, longitude, and a user location string (usually consisting of city and state) in cookies.
+Yawp stores a user's location as latitude, longitude, and a user location string (usually consisting of city and state) in cookies.
 
 By default, location is obtained from the user's ip-address using ipstack's IP Geolocation API.  Users can change location either by clicking one of the footer links to one of Yawp's cities or by completing an auto suggestion in the search bar's near field.
 
