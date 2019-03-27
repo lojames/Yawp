@@ -28,7 +28,7 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=40.7309&lon=-73.9872&loc=New%20York&filters=l'
+                  search: '?query=&lat=40.7309&lon=-73.9872&loc=New%20York&filters='
                 }}
                 onClick={window.scrollTo(0, 0)}
                 >New York
@@ -38,7 +38,7 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=34.0537&lon=-118.243&loc=Los%20Angeles%2C%20California&filters=l'
+                  search: '?query=&lat=34.0537&lon=-118.243&loc=Los%20Angeles%2C%20California&filters='
                 }}
                 onClick={window.scrollTo(0, 0)}
                 >Los Angeles
@@ -48,7 +48,7 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=41.8756&lon=-87.6244&loc=Chicago%2C%20Illinois&filters=l'
+                  search: '?query=&lat=41.8756&lon=-87.6244&loc=Chicago%2C%20Illinois&filters='
                 }}
                 onClick={window.scrollTo(0, 0)}
                 >Chicago
@@ -58,7 +58,7 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=29.7589&lon=-95.3677&loc=Houston%2C%20Texas&filters=l'
+                  search: '?query=&lat=29.7589&lon=-95.3677&loc=Houston%2C%20Texas&filters='
                 }}
                 onClick={window.scrollTo(0, 0)}
                 >Houston
@@ -68,7 +68,7 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=33.4486&lon=-112.077&loc=Phoenix%2C%20Arizona&filters=l'
+                  search: '?query=&lat=33.4486&lon=-112.077&loc=Phoenix%2C%20Arizona&filters='
                 }}
                 onClick={window.scrollTo(0, 0)}
                 >Phoenix
@@ -85,7 +85,7 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=39.9524&lon=-75.1636&loc=Philadelphia%2C%20Pennsylvania&filters=l'
+                  search: '?query=&lat=39.9524&lon=-75.1636&loc=Philadelphia%2C%20Pennsylvania&filters='
                 }}
                 onClick={window.scrollTo(0, 0)}
                 >Philadelphia
@@ -95,7 +95,7 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=29.4246&lon=-98.4951&loc=San%20Antonio%2C%20Texas&filters=l'
+                  search: '?query=&lat=29.4246&lon=-98.4951&loc=San%20Antonio%2C%20Texas&filters='
                 }}
                 onClick={window.scrollTo(0, 0)}
                 >San Antonio
@@ -105,7 +105,7 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=32.7174&lon=-117.163&loc=San%20Diego%2C%20California&filters=l'
+                  search: '?query=&lat=32.7174&lon=-117.163&loc=San%20Diego%2C%20California&filters='
                 }}
                 onClick={window.scrollTo(0, 0)}
                 >San Diego
@@ -115,7 +115,7 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=32.7763&lon=-96.7969&loc=Dallas%2C%20Texas&filters=&filters=l'
+                  search: '?query=&lat=32.7763&lon=-96.7969&loc=Dallas%2C%20Texas&filters='
                 }}
                 onClick={window.scrollTo(0, 0)}
                 >Dallas
@@ -125,7 +125,7 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=37.3362&lon=-121.891&loc=San%20José%2C%20California&filters=l'
+                  search: '?query=&lat=37.3362&lon=-121.891&loc=San%20José%2C%20California&filters='
                 }}
                 onClick={window.scrollTo(0, 0)}
                 >San Hose

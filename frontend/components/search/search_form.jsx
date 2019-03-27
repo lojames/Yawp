@@ -23,10 +23,10 @@ class SearchForm extends React.Component{
     this.handleNearChange = this.handleNearChange.bind(this);
   }
 
-  componentDidUpdate(){
+  componentDidUpdate(prevProps){
     const searchParams = parseSearchString(this.props.location.search);
-    if (this.props.location.pathname !== '/' && searchParams.filters && searchParams.filters.includes('l')){
-      searchParams.filters = searchParams.filters.replace('l', '');
+    const prevPropsSearchParams = parseSearchString(prevProps.location.search);
+    if (this.props.location.pathname !== '/' && JSON.stringify(searchParams) !== JSON.stringify(prevPropsSearchParams)){
       const historyOptions = convertToHistoryOptions(searchParams);
       this.props.history.replace(historyOptions);
       this.setState({

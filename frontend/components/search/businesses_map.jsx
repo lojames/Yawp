@@ -65,7 +65,6 @@ class BusinessesMap extends React.Component{
   }
 
   render(){
-    console.log("HI");
     return (
       <div className='search-map-container'>
         <div id='search-map' ref={map => this.mapNode = map}>

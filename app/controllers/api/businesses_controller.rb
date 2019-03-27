@@ -9,16 +9,11 @@ class Api::BusinessesController < ApplicationController
       @images = @business.images.includes(:user)
       render :show
     else
-      puts @business.errors
       render json: @business.errors.full_messages, status: 404
     end
   end
 
   def index
-    puts "\n\n\n\n"
-    puts params
-    puts "\n\n\n\n"
-
     radius = params[:radius] ? params[:radius] : 5
     query = "%" + URI.unescape(params[:query]).downcase + "%"
 
@@ -29,12 +24,6 @@ class Api::BusinessesController < ApplicationController
         OR lower(categories.name) SIMILAR TO ?", query, query)
       .distinct("businesses.id")
 
-    # businesses = Business.in_bounds(40.751282,-73.98399).includes(:reviews, :images)
-    # @businesses = businesses.joins("RIGHT JOIN business_categories on businesses.id = business_categories.business_id")
-    #   .joins("LEFT JOIN categories ON business_categories.category_id = categories.id")
-    #   .where("lower(businesses.name) SIMILAR TO ?
-    #     OR lower(categories.name) SIMILAR TO ?", '%voc%', '%voc%')
-    #   .distinct("businesses.id")
     render :index
   end
 
