@@ -1,6 +1,6 @@
 # [Yawp](https://yawp-app.herokuapp.com/#/)
 
-Yawp is a location based, searchable business directory with crowdsourced reviews and images built on Rails and React + Redux.  Reviews and Images can be posted on the app by anyone that signs up and logs in.
+Yawp is a location based, searchable business directory with crowdsourced reviews and images built on Rails and React + Redux.  Reviews and Images can be posted on the app by anyone that logs in.
 
 # Technologies Used
 * Rails
