@@ -18,7 +18,7 @@ const BusinessHeader = ({ business }) => {
         </div>
         <span className="price-category">{business.price}</span>
       </div>
-      <div className="main-business-header-links">
+      <div className="main-business-header-links" style={{display: "none"}}>
         <a href="/" className="main-business-review-link">
           {Icons.starIcon(24, "white")}
           <span className='review-text'>Write a Review</span>

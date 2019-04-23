@@ -149,6 +149,29 @@
   fill: currentColor;
 }
 
+.user-nav-dropdown-aligner{
+  height: 38px;
+  display: inline-block;
+  position: relative;
+}
+
+.user-nav-dropdown {
+  display: none;
+  position: absolute;
+  box-sizing: border-box;
+  padding: 12px;
+  min-width: 217px;
+  background: white;
+  border: 1px solid gray;
+  border-radius: 3px;
+  border-color: rgba(0,0,0, 0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0, 0.3);
+  color: rgb(0, 115,187);
+}
+.user-nav-dropdown li:hover {
+  text-decoration: underline;
+}
+
 .splash-container-main {
   color: white;
   font-weight: 700;
@@ -192,13 +215,7 @@ img {
   max-height: 100%;
 }
 
-.temp-button {
-  position: absolute;
-  left: 50%;
-}
-
 .splash-container-main-background {
-  // background: image-url("hanami-sushi_by_Kevin-P");
   padding-top: 30px;
   display: block;
   width: 100%;

@@ -10,11 +10,11 @@ const Footer = () => {
             About Yawp
           </div>
           <ul className="footer-main-content">
-            <li><Link to="/">About Yawp</Link></li>
-            <li><Link to="/">Geolcation</Link></li>
-            <li><Link to="/">Search</Link></li>
-            <li><Link to="/">Images</Link></li>
-            <li><Link to="/">Dataset</Link></li>
+            <li><Link to="https://github.com/lojames/Yawp/#yawp">About Yawp</Link></li>
+            <li><Link to="https://github.com/lojames/Yawp/#location">Geolocation</Link></li>
+            <li><Link to="https://github.com/lojames/Yawp/#search">Search</Link></li>
+            <li style={{display: "none"}}><Link to="/">Images</Link></li>
+            <li style={{display: "none"}}><Link to="/">Dataset</Link></li>
             <li><a href="https://github.com/lojames/Yawp">Github Project Page</a></li>
           </ul>
         </div>

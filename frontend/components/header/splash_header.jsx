@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
     <header className='splash-header'>
       <div className='left-splash-header-nav'>
         <ul className='left-splash-header-elements'>
-          <li><Link to='/'>Write a Review</Link></li>
+          <li style={{display: "none"}}><Link to='/'>Write a Review</Link></li>
         </ul>
       </div>
       <AuthContainer className='right-splash-header-nav'/>

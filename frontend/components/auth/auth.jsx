@@ -2,6 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Auth = ({ currentUser, logout }) => {
+  const dropDown = () => {
+    const userNavDropdown = document.getElementById("user-nav-dropdown-id");
+    userNavDropdown.style.display = "block";
+  }
+
+  window.onclick = (event) => {
+    if (!(event.target.matches('.user-nav') || event.target.matches('.user-nav-0') || event.target.matches('.user-nav-1') )) {
+      const userNavDropdownRemove = document.getElementById("user-nav-dropdown-id");
+      userNavDropdownRemove.style.display = "none";
+    }
+  }
+
   const authNav = () => (
     <ul className="not-logged-in">
       <li className='not-logged-in-login'><Link to="/login">Log In</Link></li>
@@ -32,18 +44,22 @@ const Auth = ({ currentUser, logout }) => {
       </div>
     </div>
 
-    <div className="user-nav">
+    <div className="user-nav" onClick={dropDown}>
       <span className="logged-in-user-avatar-clickable">
-        <img src='./avatar.png' />
+        <img className="user-nav-0" onClick={dropDown} src='./avatar.png' />
       </span>
       <span className='user-nav-clickable'>
-        <svg id="14x14_triangle_down" height="100%" viewBox="0 0 14 14"
+        <svg className="user-nav-1" onClick={dropDown} id="14x14_triangle_down" height="100%" viewBox="0 0 14 14"
           width="100%">
           <path d="M7 9L3.5 5h7L7 9z"></path>
         </svg>
       </span>
     </div>
-    <button className="temp-button" onClick={logout}>Log Out</button>
+    <div className="user-nav-dropdown-aligner">
+      <ul id="user-nav-dropdown-id" className="user-nav-dropdown">
+        <li onClick={logout}>Log Out</li>
+      </ul>
+    </div>
   </>
   );
 

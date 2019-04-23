@@ -45,7 +45,7 @@ const BusinessUserReview = ({business}) => {
               </div>
             </div>
           </div>
-          <Link to="/">Start your review of <b>{business.name}</b>.</Link>
+          <Link to="/" style={{display: "none"}}>Start your review of <b>{business.name}</b>.</Link>
         </div>
       </div>
     </li>
