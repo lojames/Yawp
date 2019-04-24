@@ -54,11 +54,11 @@ const Auth = ({ currentUser, logout }) => {
           <path d="M7 9L3.5 5h7L7 9z"></path>
         </svg>
       </span>
-    </div>
-    <div className="user-nav-dropdown-aligner">
-      <ul id="user-nav-dropdown-id" className="user-nav-dropdown">
-        <li onClick={logout}>Log Out</li>
-      </ul>
+      <span className="user-nav-dropdown-aligner">
+        <ul id="user-nav-dropdown-id" className="user-nav-dropdown">
+          <li className="logout" onClick={logout}>Log Out</li>
+        </ul>
+      </span>
     </div>
   </>
   );
