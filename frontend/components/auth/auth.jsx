@@ -10,7 +10,9 @@ const Auth = ({ currentUser, logout }) => {
   window.onclick = (event) => {
     if (!(event.target.matches('.user-nav') || event.target.matches('.user-nav-0') || event.target.matches('.user-nav-1') )) {
       const userNavDropdownRemove = document.getElementById("user-nav-dropdown-id");
-      userNavDropdownRemove.style.display = "none";
+      if (userNavDropdownRemove) {
+          userNavDropdownRemove.style.display = "none";
+      }
     }
   }
 
