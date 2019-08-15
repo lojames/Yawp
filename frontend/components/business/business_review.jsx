@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { starsStr, imageOffset } from '../../util/stars'
 
+const htmlDecode = function(input){
+    var e = document.createElement('div');
+    e.innerHTML = input;
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
+
 const BusinessReview = ({ review }) => {
   return (
     <li>
@@ -18,9 +24,7 @@ const BusinessReview = ({ review }) => {
           </div>
           <div> {review.date} </div>
         </div>
-          <p>
-            {review.body}
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: review.body }} />
       </div>
 
     </li>

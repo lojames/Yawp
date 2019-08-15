@@ -53,13 +53,15 @@ const SearchBusiness = ({ business, reviews, images, location, id, idx }) => {
           </div>
         </div>
       <div className="search-list-business-review">
-        <p>{review}
-        <Link
-          to={{
-            pathname: `/biz/${id}`,
-            search: location.search
-          }}
-          style={{visibility: readMoreFlag}}>read more</Link>
+        <p>
+          {review}
+          <Link
+            to={{
+              pathname: `/biz/${id}`,
+              search: location.search
+            }}
+            style={{visibility: readMoreFlag}}>read more
+          </Link>
         </p>
       </div>
       </section>
