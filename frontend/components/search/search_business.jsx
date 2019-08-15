@@ -18,7 +18,7 @@ const SearchBusiness = ({ business, reviews, images, location, id, idx }) => {
   return (
     <li>
       <section className="search-list-business-image-wrapper">
-        <img src={image}/>
+        <img src={`https://yawp-app.s3.amazonaws.com/bphoto/${image}/s.jpg`}/>
       </section>
 
       <section className="search-list-business-info-wrapper">

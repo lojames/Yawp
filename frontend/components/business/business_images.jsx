@@ -44,7 +44,7 @@ const BusinessImages = ({ business, images }) => {
 
     for (let i = 0; i < keys.length && i < 3; i++){
       imageStyle[i] = {display: "block"};
-      imageUrl[i] = images[keys[i]].image_url;
+      imageUrl[i] = `https://yawp-app.s3.amazonaws.com/bphoto/${images[keys[i]].image_url}/s.jpg`;
       imageCaption[i] = images[keys[i]].comment;
       if (imageCaption[i] === null) {
         imageCaption[i] = `Photo of ${business.name} - ${business.city}, ${business.state}`;
