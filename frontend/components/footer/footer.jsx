@@ -125,10 +125,10 @@ const Footer = () => {
               <Link
                 to={{
                   pathname: `/search`,
-                  search: '?query=&lat=37.3362&lon=-121.891&loc=San%20José%2C%20California&filters='
+                  search: '?query=&lat=37.7749&lon=-122.41941&loc=San%20Francisco%2C%20California&filters='
                 }}
                 onClick={window.scrollTo(0, 0)}
-                >San Hose
+                >San Francisco
               </Link>
             </li>
           </ul>

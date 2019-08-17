@@ -1,10 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { starsStr, imageOffset } from '../../util/stars'
+import ReactHtmlParser from 'react-html-parser';
 
 const SearchBusiness = ({ business, reviews, images, location, id, idx }) => {
-  let review = reviews[business.review_ids[0]] ? `"${reviews[business.review_ids[0]].body}"` : "";
+
+  const unescape = escaped =>
+    escaped.replace(/\\u([0-9a-f]{4})/g,(match, offset) =>
+      String.fromCharCode(parseInt(offset, 16)));
+
+
+  let review = reviews[business.review_ids[0]] ? ReactHtmlParser(reviews[business.review_ids[0]].body) : "";
   let readMoreFlag = "hidden";
+  let streetAddress = business.street_address ? business.street_address.replace("\\n", "<br>") : "";
   const image = images[business.image_ids[0]] ? images[business.image_ids[0]].image_url : "/business_large_square.png";
   if (review.length > 150){
     review = review.slice(0, 150);
@@ -29,7 +37,7 @@ const SearchBusiness = ({ business, reviews, images, location, id, idx }) => {
               <Link to={{
                   pathname: `/biz/${id}`,
                   search: location.search
-                }}>{business.name}
+                }}>{unescape(business.name)}
               </Link>
             </h1>
             <div className="search-list-business-text">
@@ -45,7 +53,7 @@ const SearchBusiness = ({ business, reviews, images, location, id, idx }) => {
               {business.phone}
             </div>
             <div className="search-list-business-text">
-              {business.street_address}
+              {ReactHtmlParser(streetAddress)}
             </div>
             <div className="search-list-business-text">
               {business.neighborhood}
