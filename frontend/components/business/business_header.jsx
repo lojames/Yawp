@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { starsStr, imageOffset } from '../../util/stars'
 import * as Icons from "../../util/icons"
+import { unescaper } from "../../util/data"
 
 
 const BusinessHeader = ({ business }) => {
   return (
     <div className="main-business-header">
       <div className="main-business-info">
-        <h1>{business.name}</h1>
+        <h1>{unescaper(business.name)}</h1>
         <div className="rating-wrapper">
           <div className="main-business-stars"
             title={starsStr(business.score)}

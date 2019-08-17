@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { unescaper } from "../../util/data"
 
 const BusinessImages = ({ business, images }) => {
   let background = {}
@@ -47,7 +48,7 @@ const BusinessImages = ({ business, images }) => {
       imageUrl[i] = `https://yawp-app.s3.amazonaws.com/bphoto/${images[keys[i]].image_url}/s.jpg`;
       imageCaption[i] = images[keys[i]].comment;
       if (imageCaption[i] === null) {
-        imageCaption[i] = `Photo of ${business.name} - ${business.city}, ${business.state}`;
+        imageCaption[i] = `Photo of ${unescaper(business.name)} - ${business.city}, ${business.state}`;
       }
     }
   }

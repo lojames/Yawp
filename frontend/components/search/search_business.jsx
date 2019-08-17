@@ -1,27 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { starsStr, imageOffset } from '../../util/stars'
+import { unescaper } from "../../util/data"
 import ReactHtmlParser from 'react-html-parser';
 
 const SearchBusiness = ({ business, reviews, images, location, id, idx }) => {
-
-  const unescape = escaped =>
-    escaped.replace(/\\u([0-9a-f]{4})/g,(match, offset) =>
-      String.fromCharCode(parseInt(offset, 16)));
-
-
-  let review = reviews[business.review_ids[0]] ? ReactHtmlParser(reviews[business.review_ids[0]].body) : "";
+  let review = ""
   let readMoreFlag = "hidden";
+  if(reviews[business.review_ids[0]]){
+    review = reviews[business.review_ids[0]].body;
+    if (review.length > 150){
+      review = review.slice(0, 150);
+      while (review.slice(review.length-1, review.length) !== " " &&
+            review.slice(review.length-1, review.length) !== "r" &&
+            review.slice(review.length-1, review.length) !== "b" &&
+            review.slice(review.length-1, review.length) !== "<" &&
+            review.slice(review.length-1, review.length) !== ">" &&
+            review.length > 0){
+        review = review.slice(0, review.length-1);
+      }
+      review = review.slice(0, review.length-1) + '...\" ';
+      readMoreFlag = "visibile";
+    }
+    review = ReactHtmlParser(review);
+  } else {
+    review = "";
+  }
+
+  // let review = reviews[business.review_ids[0]] ? ReactHtmlParser(reviews[business.review_ids[0]].body).toString() : "";
   let streetAddress = business.street_address ? business.street_address.replace("\\n", "<br>") : "";
   const image = images[business.image_ids[0]] ? images[business.image_ids[0]].image_url : "/business_large_square.png";
-  if (review.length > 150){
-    review = review.slice(0, 150);
-    while (review.slice(review.length-1, review.length) !== " " && review.length > 0){
-      review = review.slice(0, review.length-1);
-    }
-    review = review.slice(0, review.length-1) + '...\" ';
-    readMoreFlag = "visibile";
-  }
+  // if (review.length > 150){
+  //   review = review.slice(0, 150);
+  //   while (review.slice(review.length-1, review.length) !== " " && review.length > 0){
+  //     review = review.slice(0, review.length-1);
+  //   }
+  //   review = review.slice(0, review.length-1) + '...\" ';
+  //   readMoreFlag = "visibile";
+  // }
 
   return (
     <li>
@@ -37,7 +53,7 @@ const SearchBusiness = ({ business, reviews, images, location, id, idx }) => {
               <Link to={{
                   pathname: `/biz/${id}`,
                   search: location.search
-                }}>{unescape(business.name)}
+                }}>{unescaper(business.name)}
               </Link>
             </h1>
             <div className="search-list-business-text">
